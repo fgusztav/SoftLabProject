@@ -1,2 +1,2 @@
-public class Felszereles {
+public abstract class Felszereles {
 }

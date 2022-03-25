@@ -1,2 +1,3 @@
-public class Kesztyu {
+public class Kesztyu extends Felszereles {
+
 }

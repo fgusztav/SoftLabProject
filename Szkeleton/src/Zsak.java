@@ -1,2 +1,3 @@
-public class Zsak {
+public class Zsak extends Felszereles {
+
 }

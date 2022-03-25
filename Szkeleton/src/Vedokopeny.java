@@ -1,2 +1,3 @@
-public class Vedokopeny {
+public class Vedokopeny extends Felszereles {
+
 }
