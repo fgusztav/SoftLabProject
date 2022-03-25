@@ -123,7 +123,6 @@ public class Virologus {
     public Mezo getMezo() {
         return mezo;
     }
-
     public void setMezo(Mezo mezo) {
         this.mezo = mezo;
     }
@@ -131,7 +130,6 @@ public class Virologus {
     public Anyag getTarolo() {
         return tarolo;
     }
-
     public void setTarolo(Anyag tarolo) {
         this.tarolo = tarolo;
     }
@@ -139,7 +137,6 @@ public class Virologus {
     public int getMaxAnyag() {
         return maxAnyag;
     }
-
     public void setMaxAnyag(int maxAnyag) {
         this.maxAnyag = maxAnyag;
     }

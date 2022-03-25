@@ -1,2 +1,2 @@
-public class Ures {
+public class Ures extends Mezo{
 }

@@ -1,2 +1,2 @@
-public class Varos {
+public class Varos extends Mezo {
 }

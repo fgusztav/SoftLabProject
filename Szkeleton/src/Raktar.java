@@ -1,2 +1,2 @@
-public class Raktar {
+public class Raktar extends Mezo {
 }

@@ -1,2 +1,3 @@
-public class Mezo {
+public abstract class Mezo {
+
 }

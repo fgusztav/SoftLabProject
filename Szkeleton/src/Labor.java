@@ -1,2 +1,2 @@
-public class Labor {
+public class Labor extends Mezo {
 }
