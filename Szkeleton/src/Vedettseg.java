@@ -1,3 +1,5 @@
+
+
 public class Vedettseg extends Agens {
 
     /**
@@ -11,7 +13,7 @@ public class Vedettseg extends Agens {
      * Védett lesz a virológus az ágensekkel szemben.
      * @param v A vítustáncra kényszerített virológus.
      */
-    public void hatas (Virologus v) {
+    public void hatas(Virologus v) {
 
     }
 }
