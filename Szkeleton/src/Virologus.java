@@ -120,26 +120,14 @@ public class Virologus implements Leptetheto{
 
 
     //Getterek-setterek:
-    public Mezo getMezo() {
-        return mezo;
-    }
-    public void setMezo(Mezo mezo) {
-        this.mezo = mezo;
-    }
+    public Mezo getMezo() {return mezo; }
+    public void setMezo(Mezo mezo) {this.mezo = mezo; }
 
-    public Anyag getTarolo() {
-        return tarolo;
-    }
-    public void setTarolo(Anyag tarolo) {
-        this.tarolo = tarolo;
-    }
+    public Anyag getTarolo() {return tarolo; }
+    public void setTarolo(Anyag tarolo) {this.tarolo = tarolo; }
 
-    public int getMaxAnyag() {
-        return maxAnyag;
-    }
-    public void setMaxAnyag(int maxAnyag) {
-        this.maxAnyag = maxAnyag;
-    }
+    public int getMaxAnyag() {return maxAnyag; }
+    public void setMaxAnyag(int maxAnyag) {this.maxAnyag = maxAnyag; }
 
 
 }

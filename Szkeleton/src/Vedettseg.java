@@ -1,5 +1,3 @@
-
-
 public class Vedettseg extends Agens {
 
     /**

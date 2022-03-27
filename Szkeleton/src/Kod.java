@@ -2,7 +2,7 @@ public abstract class Kod {
     protected Anyag ar;
 
     public Anyag getAr() {return ar; }
-    public void setAr(Anyag ar) {this.ar = ar; }
+    public void setAr(Anyag ar) {this.ar = ar;}
 
     /**
      * Ezzel a metódussal hozunk létre egy ágenst.
