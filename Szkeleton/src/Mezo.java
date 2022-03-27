@@ -1,5 +1,3 @@
-
-
 public abstract class Mezo {
 
 
@@ -7,14 +5,14 @@ public abstract class Mezo {
 
     }
     /**
-     * Elfogadja a megadott virologust a mez�re
-     * @param vir
+     * Elfogadja a megadott virologust a mezőre
+     * @param vir Ezt a virológust fogadja el az adott mezőre
      */
     abstract public void elfogad (Virologus vir);
 
     /**
-     * Elt�volitja az adott virologust a mez�r�l
-     * @param vir
+     * Eltávolitja az adott virologust a mezőről
+     * @param vir Ezt a virológust távolítja el az adott mezőről.
      */
     abstract public void eltavolit(Virologus vir);
 }

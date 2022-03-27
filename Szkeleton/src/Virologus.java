@@ -7,7 +7,7 @@ import java.util.List;
  * anyagokat. Meg tud tanulni Hatásokat azaz kódokat. Minden körben lép. És le tud
  * bénulni ilyenkor nem mozog és a nála lévő anyagok elvehetőek.
  */
-public class Virologus {
+public class Virologus implements Leptetheto{
     private Mezo mezo;
     private Anyag tarolo;
     private int maxAnyag;

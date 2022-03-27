@@ -1,4 +1,4 @@
-public abstract class Agens {
+public abstract class Agens implements Leptetheto{
     protected int idotartam;
     protected boolean kenve;
 

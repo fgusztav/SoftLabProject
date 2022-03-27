@@ -1,4 +1,4 @@
-public class GameManager {
+public class GameManager implements Leptetheto{
     private int kodok;
 
     /**
