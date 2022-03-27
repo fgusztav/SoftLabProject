@@ -69,6 +69,7 @@ public class Virologus implements Leptetheto{
      * @param f Felvett felszerelés.
      */
     public void felszereles_hozzaad(Felszereles f) {
+        felszereles.add(f);
         System.out.println("Uj felszereles hozzaad.");
     }
 
@@ -98,6 +99,13 @@ public class Virologus implements Leptetheto{
         agens.add(new Amnezia());
         for (int i = 0; i < agens.size(); i++){
             agens.get(i).lep();
+            agens.get(i).getIdotartam();
+        }
+        for(int i = 0; i < felszereles.size();i++){
+            felszereles.get(i).felszerelesHatas(this);
+        }
+        for (int i = 0; i < rakenve.size(); i++) {
+            rakenve.get(i).hatas(this);
         }
         System.out.println("Virologus leptetese.");
     }

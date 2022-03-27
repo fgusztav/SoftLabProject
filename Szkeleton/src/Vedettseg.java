@@ -1,5 +1,6 @@
 public class Vedettseg extends Agens {
 
+
     /**
      * Körönként csökkenti a hatás időtartamát.
      */

@@ -12,6 +12,8 @@ public class Benitottsag extends Agens{
      * @param v Ez a virológus lesz magetehetetlen.
      */
     public void hatas (Virologus v) {
+        // Virológus körének vége
+
         System.out.println("Benitottsag hatasa.");
     }
 }

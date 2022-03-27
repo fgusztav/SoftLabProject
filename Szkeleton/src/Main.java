@@ -61,6 +61,35 @@ public class Main {
         v.agens_letrehoz(k);
     }
 
+    public static void VitustáncAlattLep(){
+        Ures u = new Ures();
+        Ures u1 = new Ures();
+        Ures u2 = new Ures();
+        u.addMezo(u1);
+        u.addMezo(u2);
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        Kesztyu k = new Kesztyu();
+        Vitustanc vit = new Vitustanc();
+        v.felszereles_hozzaad(k);
+        v.megkenve(vit);
+        vit.setVirologus(v);
+        v.lep();
+    }
+    public static void BenitasAlattLep(){
+        Ures u = new Ures();
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        Kesztyu k = new Kesztyu();
+        v.felszereles_hozzaad(k);
+        Benitottsag b = new Benitottsag();
+        v.megkenve(b);
+        v.lep();
+    }
+    public static void AmneziaAlattLep(){
+
+    }
+    public static void VedettsegAlattLep(){
+
+    }
     public static void VirMagaraAgenstKen(Agens a) {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
@@ -168,6 +197,13 @@ public class Main {
          */
         System.out.println("\nJáték kezdes.");
         JatekVege();
+
+        /**
+         * Vitustanc alatt lep.
+         */
+        System.out.println("\nVitustanc alatt lep");
+        VitustáncAlattLep();
+
 
 
 
