@@ -73,6 +73,8 @@ public class Virologus implements Leptetheto{
      * @param m Az a mező, amelyre a virológust áthelyezzük.
      */
     public void mozgas(Mezo m) {
+        mezo.eltavolit(this);
+        m.elfogad(this);
         System.out.println("Virológus elmozdult");
     }
 
