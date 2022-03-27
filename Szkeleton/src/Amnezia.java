@@ -13,6 +13,7 @@ public class Amnezia extends Agens {
      * @param v Ez a virológus fogja elfelejteni a megtanult genetikai kódokat.
      */
     public void hatas (Virologus v) {
+        v.getIsmert_hatasok().clear();
         System.out.println("Amnezia hatasa.");
     }
 }

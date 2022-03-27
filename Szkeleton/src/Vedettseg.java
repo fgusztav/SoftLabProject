@@ -13,6 +13,7 @@ public class Vedettseg extends Agens {
      * @param v A vítustáncra kényszerített virológus.
      */
     public void hatas(Virologus v) {
+        v.getRakenve().clear();
         System.out.println("Vedettseg hatasa.");
     }
 }

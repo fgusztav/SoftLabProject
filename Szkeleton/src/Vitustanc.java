@@ -16,9 +16,13 @@ public class Vitustanc extends Agens{
      */
     public void hatas (Virologus v) {
         List<Mezo> mezok = v.getMezo().getMezok();
-        int rnd = new Random().nextInt(mezok.size());
-        Mezo lep = mezok.get(rnd);
-        v.mozgas(lep);
+        int rnd;
+        if(mezok.size() > 0){
+            rnd = new Random().nextInt(mezok.size());
+            Mezo lep = mezok.get(rnd);
+            v.mozgas(lep);
+        }
+
         System.out.println("Vitustanc hatasa.");
     }
 }

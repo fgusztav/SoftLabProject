@@ -14,6 +14,7 @@ public class Benitottsag extends Agens{
     public void hatas (Virologus v) {
         // Virológus körének vége
 
+
         System.out.println("Benitottsag hatasa.");
     }
 }

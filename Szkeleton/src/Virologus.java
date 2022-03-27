@@ -160,6 +160,14 @@ public class Virologus implements Leptetheto{
     public void setMaxAnyag(int maxAnyag) {this.maxAnyag = maxAnyag; }
 
     public List<Felszereles> getFelszereles() {return felszereles; }
+    public List<Agens> getRakenve(){return rakenve;}
 
 
+    public List<Kod> getIsmert_hatasok() {
+        return ismert_hatasok;
+    }
+
+    public void setIsmert_hatasok(List<Kod> ismert_hatasok) {
+        this.ismert_hatasok = ismert_hatasok;
+    }
 }

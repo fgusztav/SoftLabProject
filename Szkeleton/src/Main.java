@@ -85,10 +85,25 @@ public class Main {
         v.lep();
     }
     public static void AmneziaAlattLep(){
-
+        Ures u = new Ures();
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        Kesztyu k = new Kesztyu();
+        v.felszereles_hozzaad(k);
+        v.kod_hozzaad(new Vedettseg_kod());
+        v.kod_hozzaad(new Amnezia_kod());
+        Amnezia a = new Amnezia();
+        v.megkenve(a);
+        v.lep();
     }
     public static void VedettsegAlattLep(){
-
+        Ures u = new Ures();
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        Kesztyu k = new Kesztyu();
+        v.felszereles_hozzaad(k);
+        v.megkenve(new Vitustanc());
+        v.megkenve(new Benitottsag());
+        v.megkenve(new Vedettseg());
+        v.lep();
     }
     public static void VirMagaraAgenstKen(Agens a) {
         Ures u = new Ures();
@@ -203,6 +218,26 @@ public class Main {
          */
         System.out.println("\nVitustanc alatt lep");
         VitustáncAlattLep();
+
+        /**
+         * Benitas alatt lep.
+         */
+        System.out.println("\nBenitas alatt lep");
+        BenitasAlattLep();
+
+        /**
+         * Amnezia alatt lep.
+         */
+        System.out.println("\nAmnezia alatt lep");
+        AmneziaAlattLep();
+
+        /**
+         * Vedettseg alatt lep.
+         */
+        System.out.println("\nVedettseg alatt lep");
+        VedettsegAlattLep();
+
+
 
 
 
