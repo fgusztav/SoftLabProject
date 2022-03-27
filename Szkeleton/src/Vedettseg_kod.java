@@ -5,7 +5,7 @@ public class Vedettseg_kod extends  Kod {
      * @param a Az ágens elkészítéséhez szükséges anyagmennyiség.
      */
     public Vedettseg letrehoz (Anyag a){
-        System.out.println("Létrehoz védettség.");
+        System.out.println("Letrehoz vedettseg.");
         return new Vedettseg();
     }
 }

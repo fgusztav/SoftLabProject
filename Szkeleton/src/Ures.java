@@ -6,7 +6,7 @@ public class Ures extends Mezo{
      * @param vir Ezt a virológust fogadja el az adott mezõre
      */
     public void elfogad(Virologus vir) {
-        System.out.println("Virológus üres mezõre lép.");
+        System.out.println("Virologus ures mezore lep.");
     }
 
     /**
@@ -15,6 +15,6 @@ public class Ures extends Mezo{
      * @param vir Ezt a virológust távolítja el az adott mezõrõl
      */
     public void eltavolit(Virologus vir) {
-        System.out.println("Virológus elhagyja az üres mezõt");
+        System.out.println("Virologus elhagyja az ures mezot");
     }
 }

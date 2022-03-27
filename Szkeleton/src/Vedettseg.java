@@ -12,6 +12,6 @@ public class Vedettseg extends Agens {
      * @param v A vítustáncra kényszerített virológus.
      */
     public void hatas(Virologus v) {
-        System.out.println("Védettség hatása.");
+        System.out.println("Vedettseg hatasa.");
     }
 }

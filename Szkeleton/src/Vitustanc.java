@@ -4,7 +4,7 @@ public class Vitustanc extends Agens{
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Vítustánc hatás léptetése.");
+        System.out.println("Vitustanc hatas leptetese.");
     }
 
     /**
@@ -12,6 +12,6 @@ public class Vitustanc extends Agens{
      * @param v A vítustáncra kényszerített virológus.
      */
     public void hatas (Virologus v) {
-        System.out.println("Vítustánc hatása.");
+        System.out.println("Vitustanc hatasa.");
     }
 }

@@ -1,18 +1,22 @@
 public class GameManager implements Leptetheto{
     private int kodok;
 
+    public GameManager(int kodok) {
+        this.kodok = kodok;
+    }
+
     /**
      * Minden körben új játékost léptet.
      */
     public void lep(){
-        System.out.println("GameManeger léptetés.");
+        System.out.println("GameManeger leptetes.");
     }
 
     /**
      * A játék elején legenerálja a pályát.
      */
     public void palya_generalas(){
-        System.out.println("Pálya generálva.");
+        System.out.println("Palya generalva.");
     }
 
     /**
@@ -33,13 +37,13 @@ public class GameManager implements Leptetheto{
      * új játékost ad hozzá a játékhoz
      */
     public void addPlayer(){
-        System.out.println("Új játékos hozzáadás.");
+        System.out.println("Uj jatekos hozzaadas.");
     }
 
     /**
      * Elinditja a játékot a játékosokat elhelyezi a játéktéren.
      */
     public void startGame(){
-        System.out.println("Játék indítása.");
+        System.out.println("Jatek inditasa.");
     }
 }

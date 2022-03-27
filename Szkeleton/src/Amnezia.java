@@ -1,10 +1,11 @@
 public class Amnezia extends Agens {
+    public Amnezia() {}
 
     /**
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Amnézia hatás léptetése.");
+        System.out.println("Amnezia hatas leptetese.");
     }
 
     /**
@@ -12,6 +13,6 @@ public class Amnezia extends Agens {
      * @param v Ez a virológus fogja elfelejteni a megtanult genetikai kódokat.
      */
     public void hatas (Virologus v) {
-        System.out.println("Amnézia hatása.");
+        System.out.println("Amnezia hatasa.");
     }
 }

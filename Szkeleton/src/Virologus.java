@@ -33,7 +33,7 @@ public class Virologus implements Leptetheto{
      * @param agens Ágens, amivel kennek.
      */
     public void kenes(Virologus cel, Agens agens) {
-        System.out.println("Kenés.");
+        System.out.println("Kenes.");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Virologus implements Leptetheto{
      * @param agens Az ágens, amivel kenték a virológust.
      */
     public void megkenve(Agens agens) {
-        System.out.println("A kent hatása hozzáadva.");
+        System.out.println("A kent hatasa hozzaadva.");
     }
 
     /**
@@ -49,7 +49,7 @@ public class Virologus implements Leptetheto{
      * @param k Letapogatott kód.
      */
     public void kod_hozzaad(Kod k) {
-        System.out.println("Új kód hozzáadva.");
+        System.out.println("Uj kod hozzaadva.");
     }
 
     /**
@@ -57,7 +57,7 @@ public class Virologus implements Leptetheto{
      * @param f Felvett felszerelés.
      */
     public void felszereles_hozzaad(Felszereles f) {
-        System.out.println("Új felszerelés hozzáad.");
+        System.out.println("Uj felszereles hozzaad.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class Virologus implements Leptetheto{
      * @param f Leadott felszerelés.
      */
     public void felszereles_leadas(Felszereles f) {
-        System.out.println("Felszerelés leadva.");
+        System.out.println("Felszereles leadva.");
     }
 
     /**
@@ -75,21 +75,27 @@ public class Virologus implements Leptetheto{
     public void mozgas(Mezo m) {
         mezo.eltavolit(this);
         m.elfogad(this);
-        System.out.println("Virológus elmozdult");
+        mezo = m;
+        System.out.println("Virologus elmozdult");
     }
 
     /**
      *  A léptethető függvénye, minden körben lép a virológus/körönként meghívjuk.
      */
     public void lep() {
-        System.out.println("Virológus léptetése.");
+        agens.add(new Amnezia());
+        for (int i = 0; i < agens.size(); i++){
+            agens.get(i).lep();
+        }
+        System.out.println("Virologus leptetese.");
     }
 
     /**
      * Felvesz anyagot a raktárból (amennyit tud).
      */
     public void anyag_felvesz() {
-        System.out.println("Anyag felvéve");
+        System.out.println("Anyag felveve");
+        //((Raktar)mezo).getTarolo();
     }
 
     /**
@@ -98,7 +104,7 @@ public class Virologus implements Leptetheto{
      * @return Megvehető-e az ágens (true/false).
      */
     public boolean check_ar(Kod k) {
-        System.out.println("Ár leellenőrizve.");
+        System.out.println("Ar leellenorizve.");
         return false;
     }
 
@@ -107,7 +113,7 @@ public class Virologus implements Leptetheto{
      * @param k Kód, amelyből ágenst szeretnénk lélrehozni.
      */
     public void agens_letrehoz(Kod k) {
-        System.out.println("Ágens létrehozva");
+        System.out.println("Agens letrehozva");
     }
 
     /**
@@ -116,10 +122,8 @@ public class Virologus implements Leptetheto{
      * @param v Virológus, aki megkapja az anyagot.
      */
     public void megtolt_tarolo(Virologus v) {
-        System.out.println("Tároló megtöltve.");
+        System.out.println("Tarolo megtoltve.");
     }
-
-
 
     //Getterek-setterek:
     public Mezo getMezo() {return mezo; }
