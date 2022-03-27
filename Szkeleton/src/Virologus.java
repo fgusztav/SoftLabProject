@@ -14,6 +14,7 @@ public class Virologus implements Leptetheto{
     private List<Kod> ismert_hatasok = new ArrayList<>();
     private List<Agens> rakenve = new ArrayList<>();
     private List<Agens> agens = new ArrayList<>();
+    private List<Felszereles> felszereles= new ArrayList<>();
 
     /**
      * Virológus osztály konstruktora.
@@ -30,9 +31,19 @@ public class Virologus implements Leptetheto{
     /**
      * A cél virológusra felkeni a kiválasztott ágenst.
      * @param cel Virologus akit kennek.
-     * @param agens Ágens, amivel kennek.
+     * @param a Ágens, amivel kennek.
      */
-    public void kenes(Virologus cel, Agens agens) {
+    public void kenes(Virologus cel, Agens a) {
+        agens.remove(a);
+
+        for (int i = 0; i < cel.getFelszereles().size(); i++){
+        cel.getFelszereles().get(i).felszerelesHatas(cel);
+        /**TODO: oké hogy itt végig megy az összes felszerelés hatás de utána még meglesz kenve
+         * és lehet mar késö van de hirtelen nem tom hogy kell megoldani
+            */
+             }
+        megkenve(a);
+        a.hatas(cel);
         System.out.println("Kenes.");
     }
 
@@ -41,6 +52,7 @@ public class Virologus implements Leptetheto{
      * @param agens Az ágens, amivel kenték a virológust.
      */
     public void megkenve(Agens agens) {
+        rakenve.add(agens);
         System.out.println("A kent hatasa hozzaadva.");
     }
 
@@ -105,7 +117,7 @@ public class Virologus implements Leptetheto{
      */
     public boolean check_ar(Kod k) {
         System.out.println("Ar leellenorizve.");
-        return false;
+        return true;
     }
 
     /**
@@ -113,7 +125,11 @@ public class Virologus implements Leptetheto{
      * @param k Kód, amelyből ágenst szeretnénk lélrehozni.
      */
     public void agens_letrehoz(Kod k) {
-        System.out.println("Agens letrehozva");
+        Anyag a = new Anyag(5, 2);
+        if(check_ar(k) ){
+        k.letrehoz(a);
+        setTarolo(a);
+        System.out.println("Agens letrehozva");}
     }
 
     /**
@@ -134,6 +150,8 @@ public class Virologus implements Leptetheto{
 
     public int getMaxAnyag() {return maxAnyag; }
     public void setMaxAnyag(int maxAnyag) {this.maxAnyag = maxAnyag; }
+
+    public List<Felszereles> getFelszereles() {return felszereles; }
 
 
 }

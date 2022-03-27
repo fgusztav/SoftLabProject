@@ -10,6 +10,10 @@ public class GameManager implements Leptetheto{
      */
     public void lep(){
         System.out.println("GameManeger leptetes.");
+        if(getScore() == 4)
+            endGame();
+
+
     }
 
     /**
@@ -22,8 +26,10 @@ public class GameManager implements Leptetheto{
     /**
      * A játékosoktól lekérdezi a pontjaikat.
      */
-    public void getScore(){
+    public int getScore(){
+
         System.out.println("Score getter.");
+        return 4;
     }
 
     /**
@@ -44,6 +50,8 @@ public class GameManager implements Leptetheto{
      * Elinditja a játékot a játékosokat elhelyezi a játéktéren.
      */
     public void startGame(){
+        palya_generalas();
+
         System.out.println("Jatek inditasa.");
     }
 }

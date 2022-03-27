@@ -1,26 +1,26 @@
 public class Main {
 
-    public static void Ures2Ures (){
+    public static void Ures2Ures() {
         Ures u1 = new Ures();
         Ures u2 = new Ures();
-        Virologus v1 = new Virologus(u1, new Anyag(0,0), 10);
+        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
         v1.mozgas(u2);
     }
 
     public static void AnyagfelvetelRaktarbol() {
         Ures u = new Ures();
-        Virologus v2 = new Virologus(u, new Anyag(0,0), 10);
+        Virologus v2 = new Virologus(u, new Anyag(0, 0), 10);
         Raktar r = new Raktar(new Anyag(0, 0), false);
         v2.mozgas(r);
         v2.anyag_felvesz();
     }
 
-    public static void AnyagfelvetelBenultJatekostol(){
+    public static void AnyagfelvetelBenultJatekostol() {
         Kesztyu k = new Kesztyu();
         Ures u1 = new Ures();
         Ures u2 = new Ures();
-        Virologus v1 = new Virologus(u1, new Anyag(0,0 ), 10);
-        Virologus v2 = new Virologus(u2, new Anyag(0,0 ), 10);
+        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
+        Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
         v1.mozgas(u2);
         v2.megtolt_tarolo(v1);
         v2.felszereles_leadas(k);
@@ -36,7 +36,8 @@ public class Main {
         v.felszereles_hozzaad(k);
     }
 
-    public static void AmneziaLetapogatas(){
+
+    public static void AmneziaLetapogatas() {
         Ures u = new Ures();
         Amnezia_kod ak = new Amnezia_kod();
         Labor l = new Labor(ak);
@@ -53,10 +54,50 @@ public class Main {
         gm.lep();
         v.lep();
     }
-    
+
+    public static void VitustancAgenstLetrehoz(Kod k) {
+        Ures u = new Ures();
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        v.agens_letrehoz(k);
+    }
+
+    public static void VirMagaraAgenstKen(Agens a) {
+        Ures u = new Ures();
+        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+
+        v.kenes(v, a);
+    }
+
+    /**
+     * Végig kéne mennie az összes felszerlésen (amugy a VirMagaraAgenst kennél is ) szvl ott nem gondolkodtam el ezen
+     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kéne azt bele irni
+     * vagy feltételben oda irni hogy a felszerelést csak akkor vegye figyelmbe ha a cél és aki ken az nem ugyan az
+     */
+    public static void VirKenVirt(Agens a) {
+        Ures u1 = new Ures();
+        Ures u2 = new Ures();
+        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
+        Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
+
+        v1.kenes(v2, a);
+    }
+
+    public static void JatekVege(){
+        GameManager gm = new GameManager(4);
+        gm.lep();
+
+    }
+
+    public static void JatekKezdes(){
+        GameManager gm = new GameManager(4);
+        gm.addPlayer();
+        gm.startGame();
+
+    }
 
 
     public static void main(String[] args) {
+
 
         /**
          * A virológus lép üres mezőről üres mezőre.
@@ -94,11 +135,46 @@ public class Main {
         System.out.println("\nJatek leptetese");
         JatekLeptetes();
 
+/**
+ * A virológus Vitustánc ágenst hoz létre.
+ */
+        System.out.println("\nA virológus Vitustánc ágenst hoz létre");
+        Vitustanc_kod k = new Vitustanc_kod();
+        VitustancAgenstLetrehoz(k);
+
+
+/**
+ * A virológus ágenst ken magára.
+ */
+        System.out.println("\nA virológus ágenst ken magára.");
+        Vedettseg a = new Vedettseg();
+        VirMagaraAgenstKen(a);
+
+/**
+ * A virológus ágenst ken másra.
+ */
+        System.out.println("\nA virológus ágenst ken másra.");
+        VirKenVirt(a);
+
+
+        /**
+         *Játék vége
+         */
+        System.out.println("\nJáték Vége.");
+        JatekVege();
+
+        /**
+         *Játék kezdes
+         */
+        System.out.println("\nJáték kezdes.");
+        JatekVege();
 
 
 
 
     }
+
+
 
 
 
