@@ -33,7 +33,7 @@ public class Virologus implements Leptetheto{
      * @param agens Ágens, amivel kennek.
      */
     public void kenes(Virologus cel, Agens agens) {
-
+        System.out.println("Kenés.");
     }
 
     /**
@@ -41,7 +41,7 @@ public class Virologus implements Leptetheto{
      * @param agens Az ágens, amivel kenték a virológust.
      */
     public void megkenve(Agens agens) {
-
+        System.out.println("A kent hatása hozzáadva.");
     }
 
     /**
@@ -49,7 +49,7 @@ public class Virologus implements Leptetheto{
      * @param k Letapogatott kód.
      */
     public void kod_hozzaad(Kod k) {
-
+        System.out.println("Új kód hozzáadva.");
     }
 
     /**
@@ -57,7 +57,7 @@ public class Virologus implements Leptetheto{
      * @param f Felvett felszerelés.
      */
     public void felszereles_hozzaad(Felszereles f) {
-
+        System.out.println("Új felszerelés hozzáad.");
     }
 
     /**
@@ -65,7 +65,7 @@ public class Virologus implements Leptetheto{
      * @param f Leadott felszerelés.
      */
     public void felszereles_leadas(Felszereles f) {
-
+        System.out.println("Felszerelés leadva.");
     }
 
     /**
@@ -73,21 +73,21 @@ public class Virologus implements Leptetheto{
      * @param m Az a mező, amelyre a virológust áthelyezzük.
      */
     public void mozgas(Mezo m) {
-
+        System.out.println("Virológus elmozdult");
     }
 
     /**
      *  A léptethető függvénye, minden körben lép a virológus/körönként meghívjuk.
      */
     public void lep() {
-
+        System.out.println("Virológus léptetése.");
     }
 
     /**
      * Felvesz anyagot a raktárból (amennyit tud).
      */
     public void anyag_felvesz() {
-
+        System.out.println("Anyag felvéve");
     }
 
     /**
@@ -96,7 +96,7 @@ public class Virologus implements Leptetheto{
      * @return Megvehető-e az ágens (true/false).
      */
     public boolean check_ar(Kod k) {
-
+        System.out.println("Ár leellenőrizve.");
         return false;
     }
 
@@ -105,7 +105,7 @@ public class Virologus implements Leptetheto{
      * @param k Kód, amelyből ágenst szeretnénk lélrehozni.
      */
     public void agens_letrehoz(Kod k) {
-
+        System.out.println("Ágens létrehozva");
     }
 
     /**
@@ -114,7 +114,7 @@ public class Virologus implements Leptetheto{
      * @param v Virológus, aki megkapja az anyagot.
      */
     public void megtolt_tarolo(Virologus v) {
-
+        System.out.println("Tároló megtöltve.");
     }
 
 

@@ -4,7 +4,7 @@ public class Benitottsag extends Agens{
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-
+        System.out.println("Bénítottság hatás léptetése.");
     }
 
     /**
@@ -12,6 +12,6 @@ public class Benitottsag extends Agens{
      * @param v Ez a virológus lesz magetehetetlen.
      */
     public void hatas (Virologus v) {
-
+        System.out.println("Bénítottság hatása.");
     }
 }

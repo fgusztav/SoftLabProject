@@ -6,6 +6,6 @@ public class Kesztyu extends Felszereles {
      */
     @Override
     public void felszerelesHatas(Virologus v) {
-
+        System.out.println("Kesztyű hatás.");
     }
 }
