@@ -4,7 +4,7 @@ public class Vedokopeny extends Felszereles {
      * @param v Virológus akire hat a felszerelés hatás.
      */
     @Override
-    public void felszerelésHatás(Virologus v) {
-        super.felszerelésHatás(v);
+    public void felszerelesHatas(Virologus v) {
+
     }
 }
