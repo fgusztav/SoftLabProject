@@ -6,7 +6,7 @@ public class Amnezia_kod extends Kod{
      * @param a Az ágens elkészítéséhez szükséges anyagmennyiség.
      */
     public Amnezia letrehoz (Anyag a){
-        System.out.println("Letrehoz amnezia.");
+        System.out.println("Amnezia_kod.letrehoz() -> Letrehoz amnezia.");
         return new Amnezia();
     }
 }

@@ -4,7 +4,7 @@ public class Benitottsag extends Agens{
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Bénítottság hatás léptetése.");
+        System.out.println("Benitottsag.lep() -> Bénítottság hatás léptetése.");
     }
 
     /**
@@ -15,6 +15,6 @@ public class Benitottsag extends Agens{
         // Virológus körének vége
 
 
-        System.out.println("Benitottsag hatasa.");
+        System.out.println("Benitottsag.hatas() -> Benitottsag hatasa.");
     }
 }

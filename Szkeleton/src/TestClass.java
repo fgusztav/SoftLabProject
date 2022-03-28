@@ -64,7 +64,7 @@ public class TestClass {
         v.agens_letrehoz(k);
     }
 
-    public  void VitustáncAlattLep() {
+    public  void VitustancAlattLep() {
         Ures u = new Ures();
         Ures u1 = new Ures();
         Ures u2 = new Ures();
@@ -120,9 +120,9 @@ public class TestClass {
     }
 
     /**TODO
-     * Végig kéne mennie az összes felszerlésen (amugy a VirMagaraAgenst kennél is ) szvl ott nem gondolkodtam el ezen
-     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kéne azt bele irni
-     * vagy feltételben oda irni hogy a felszerelést csak akkor vegye figyelmbe ha a cél és aki ken az nem ugyan az
+     * Vï¿½gig kï¿½ne mennie az ï¿½sszes felszerlï¿½sen (amugy a VirMagaraAgenst kennï¿½l is ) szvl ott nem gondolkodtam el ezen
+     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kï¿½ne azt bele irni
+     * vagy feltï¿½telben oda irni hogy a felszerelï¿½st csak akkor vegye figyelmbe ha a cï¿½l ï¿½s aki ken az nem ugyan az
      */
     public  void VirKenVirt(Agens a) {
         Ures u1 = new Ures();

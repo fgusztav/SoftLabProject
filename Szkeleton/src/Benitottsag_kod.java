@@ -5,7 +5,7 @@ public class Benitottsag_kod extends Kod{
      * @param a Az ágens elkészítéséhez szükséges anyagmennyiség.
      */
     public Benitottsag letrehoz (Anyag a){
-        System.out.println("Letrehoz benitottsag.");
+        System.out.println("Benitottsag_kod.letrehoz() ->Letrehoz benitottsag.");
         return new Benitottsag();
     }
 }

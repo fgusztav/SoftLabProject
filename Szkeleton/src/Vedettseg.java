@@ -5,7 +5,7 @@ public class Vedettseg extends Agens {
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Védettség hatás léptetése.");
+        System.out.println("Vedettseg.lep() ->Védettség hatás léptetése.");
     }
 
     /**
@@ -14,6 +14,6 @@ public class Vedettseg extends Agens {
      */
     public void hatas(Virologus v) {
         v.getRakenve().clear();
-        System.out.println("Vedettseg hatasa.");
+        System.out.println("Vedettseg.hatas() ->Vedettseg hatasa.");
     }
 }

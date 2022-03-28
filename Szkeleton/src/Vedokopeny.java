@@ -5,6 +5,6 @@ public class Vedokopeny extends Felszereles {
      */
     @Override
     public void felszerelesHatas(Virologus v) {
-        System.out.println("Vedokopeny hatas.");
+        System.out.println("Vedokopeny.felszerelesHatas() -> Vedokopeny hatas.");
     }
 }

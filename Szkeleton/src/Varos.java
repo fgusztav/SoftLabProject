@@ -19,7 +19,7 @@ public class Varos extends Mezo {
      * @param vir Ezt a virológust fogadja el az adott mezőre
      */
     public void elfogad(Virologus vir) {
-        System.out.println("Virologus belepett a varosba.");
+        System.out.println("Varos.elfogad() ->Virologus belepett a varosba.");
     }
 
     /**
@@ -28,6 +28,6 @@ public class Varos extends Mezo {
      * @param vir Ezt a virológust távolítja el az adott mezőről.
      */
     public void eltavolit(Virologus vir) {
-        System.out.println("Virologus kilepett a varosbol.");
+        System.out.println("Varos.eltavolit() ->Virologus kilepett a varosbol.");
     }
 }

@@ -14,6 +14,6 @@ public class Zsak extends Felszereles {
      */
     @Override
     public void felszerelesHatas(Virologus v) {
-        System.out.println("Zsak hatas.");
+        System.out.println("Zsak.felszerelesHatas() -> Zsak hatas.");
     }
 }

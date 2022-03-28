@@ -5,7 +5,7 @@ public class Amnezia extends Agens {
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Amnezia hatas leptetese.");
+        System.out.println("Amnezia.lep() ->Amnezia hatas leptetese.");
     }
 
     /**
@@ -14,6 +14,6 @@ public class Amnezia extends Agens {
      */
     public void hatas (Virologus v) {
         v.getIsmert_hatasok().clear();
-        System.out.println("Amnezia hatasa.");
+        System.out.println("Amnezia.hatas() -> Amnezia hatasa.");
     }
 }

@@ -14,20 +14,20 @@ public class Raktar extends Mezo {
     }
 
     /**
-     * Elfogadja a megadott virologust a mezõre
+     * Elfogadja a megadott virologust a mezï¿½re
      *
-     * @param vir Ezt a virológust fogadja el az adott mezõre
+     * @param vir Ezt a virolï¿½gust fogadja el az adott mezï¿½re
      */
     public void elfogad(Virologus vir) {
-        System.out.println("Virologus belepett a raktarba.");
+        System.out.println("Raktar.elfogad() -> Virologus belepett a raktarba.");
     }
 
     /**
-     * Eltávolitja az adott virologust a mezõrõl
+     * Eltï¿½volitja az adott virologust a mezï¿½rï¿½l
      *
-     * @param vir Ezt a virológust távolítja el az adott mezõrõl.
+     * @param vir Ezt a virolï¿½gust tï¿½volï¿½tja el az adott mezï¿½rï¿½l.
      */
     public void eltavolit(Virologus vir) {
-        System.out.println("Virologus kilepett a raktarbol.");
+        System.out.println("Raktar.eltavolit() -> Virologus kilepett a raktarbol.");
     }
 }

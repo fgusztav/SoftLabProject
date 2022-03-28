@@ -7,6 +7,6 @@ public class Kesztyu extends Felszereles {
      */
     @Override
     public void felszerelesHatas(Virologus v) {
-        System.out.println("Kesztyu hatas.");
+        System.out.println("Kesztyu.felszerelesHatas() -> Kesztyu hatas.");
     }
 }

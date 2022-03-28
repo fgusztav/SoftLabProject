@@ -14,7 +14,7 @@ public class Labor extends Mezo {
      * @param vir Ezt a virológust fogadja el az adott mezőre
      */
     public void elfogad(Virologus vir) {
-        System.out.println("Virolegus belepett a laborba.");
+        System.out.println("Labor.elfogad() -> Virolegus belepett a laborba.");
     }
 
     /**
@@ -24,6 +24,6 @@ public class Labor extends Mezo {
      */
     public void eltavolit(Virologus vir) {
 
-        System.out.println("Virolegus kilépett a laborbol.");
+        System.out.println("Labor.eltavolit() -> Virolegus kilépett a laborbol.");
     }
 }

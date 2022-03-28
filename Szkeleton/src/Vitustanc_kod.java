@@ -5,7 +5,7 @@ public class Vitustanc_kod extends Kod {
      * @param a Az ágens elkészítéséhez szükséges anyagmennyiség.
      */
     public Vitustanc letrehoz (Anyag a){
-        System.out.println("Letrehoz vitustanc.");
+        System.out.println("Vitustanc_kod.letrehoz() ->Letrehoz vitustanc.");
         return new Vitustanc();
     }
 }
