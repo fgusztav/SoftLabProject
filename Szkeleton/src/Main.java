@@ -1,14 +1,11 @@
-import java.io.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         TestClass test = new TestClass();
 
-
-        System.out.println("\n1 . Játék kezdés");
-        System.out.println("\n2 . Játékos hozzáadása");
+        System.out.println("\n1. Jatek kezdes");
+        System.out.println("\n2. Jatekos hozzaadsa");
 
         Scanner in = new Scanner(System.in);
         int num = 2;
@@ -16,19 +13,17 @@ public class Main {
             num = in.nextInt();
             switch (num) {
                 case 1:
-/**
- *Játék kezdes
- */
-                    System.out.println("\nJáték kezdes.");
+                    /**
+                     *Játék kezdes
+                     */
+                    System.out.println("\nJatek kezdes.");
                     test.JatekKezdes();
                     Jatek(num, in, test);
                     test.JatekVege();
                     //TODO: amit irtam commitba
                     break;
-
-
                 case 2:
-                    System.out.println("\nUj játékost adott hozzá!");
+                    System.out.println("\nUj jatekost adott hozza!");
             }
         }
 
@@ -62,12 +57,10 @@ public class Main {
          */
         System.out.println("\n Anyag felvétel bénult játékostól");
         test.AnyagfelvetelBenultJatekostol();
-
     }
 
     /**
      * A játék menüje , választási lehetőségei
-     *
      * @param num  -beolvasott szam
      * @param in   -Scanner
      * @param test _teszt osztály
@@ -76,11 +69,11 @@ public class Main {
         boolean vege = true;
         while (vege) {
             //Kb. amiket tud majd csinálni
-            System.out.println("1 . Mozog");
-            System.out.println("2 . Keni Magát");
-            System.out.println("3 . Keni Mást");
-            System.out.println("4 . Vitus Tánc ágenst csinál");
-            System.out.println("5 . vége");
+            System.out.println("1. Mozog");
+            System.out.println("2. Keni magat");
+            System.out.println("3. Keni mast");
+            System.out.println("4. Vitustanc agenst csinal");
+            System.out.println("5. Vege");
             num = in.nextInt();
             switch (num) {
                 case 1:
@@ -136,7 +129,6 @@ public class Main {
                         case 2:
                             Benitottsag b = new Benitottsag();
                             test.VirKenVirt(b);
-                            ;
                             break;
                         case 3:
                             Vedettseg c = new Vedettseg();
@@ -161,25 +153,23 @@ public class Main {
 
             }
             test.JatekLeptetes();
-
         }
-
     }
 
     //csak kirija ezeket a dolgokat
     public static void Kiiras() {
-        System.out.println("1 . Vitustánccal");
-        System.out.println("2. Bénitóval");
-        System.out.println("3. Védettség");
-        System.out.println("4 . Amnézia");
+        System.out.println("1. Vitustanccal");
+        System.out.println("2. Benitoval");
+        System.out.println("3. Vedettseggel");
+        System.out.println("4. Amneziaval");
     }
 
     //csak kirija ezeket a dolgokat
     public static void Kiiras2() {
-        System.out.println("1 . Űres mezőre");
-        System.out.println("2. Raktárra");
-        System.out.println("3. Városra");
-        System.out.println("4 . Laborra");
+        System.out.println("1. Ures mezore");
+        System.out.println("2. Raktarra");
+        System.out.println("3. Varosra");
+        System.out.println("4. Laborra");
     }
 
 }

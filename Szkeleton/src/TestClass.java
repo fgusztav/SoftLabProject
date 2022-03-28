@@ -1,8 +1,6 @@
-
-
 public class TestClass {
+    public TestClass(){}
 
-    public TestClass(){};
     public void Ures2Ures() {
         Ures u1 = new Ures();
         Ures u2 = new Ures();
@@ -120,9 +118,9 @@ public class TestClass {
     }
 
     /**TODO
-     * V�gig k�ne mennie az �sszes felszerl�sen (amugy a VirMagaraAgenst kenn�l is ) szvl ott nem gondolkodtam el ezen
-     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy k�ne azt bele irni
-     * vagy felt�telben oda irni hogy a felszerel�st csak akkor vegye figyelmbe ha a c�l �s aki ken az nem ugyan az
+     * Vegig kene mennie az osszes felszerlesen (amugy a VirMagaraAgenst kennel is ) szvl ott nem gondolkodtam el ezen
+     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kene azt bele irni
+     * vagy feltetelben oda irni hogy a felszerelest csak akkor vegye figyelmbe ha a cel es aki ken az nem ugyan az
      */
     public  void VirKenVirt(Agens a) {
         Ures u1 = new Ures();
@@ -136,13 +134,11 @@ public class TestClass {
     public  void JatekVege() {
         GameManager gm = new GameManager(4);
         gm.lep();
-
     }
 
     public  void JatekKezdes() {
         GameManager gm = new GameManager(4);
         gm.addPlayer();
         gm.startGame();
-
     }
 }
