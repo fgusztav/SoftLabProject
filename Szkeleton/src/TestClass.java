@@ -8,7 +8,7 @@ public class TestClass {
         v1.mozgas(u2);
     }
 
-    public  void AnyagfelvetelRaktarbol() {
+    public void AnyagfelvetelRaktarbol() {
         Ures u = new Ures();
         Virologus v2 = new Virologus(u, new Anyag(0, 0), 10);
         Raktar r = new Raktar(new Anyag(0, 0), false);
@@ -16,7 +16,7 @@ public class TestClass {
         v2.anyag_felvesz();
     }
 
-    public  void AnyagfelvetelBenultJatekostol() {
+    public void AnyagfelvetelBenultJatekostol() {
         Kesztyu k = new Kesztyu();
         Ures u1 = new Ures();
         Ures u2 = new Ures();
@@ -28,7 +28,7 @@ public class TestClass {
         v1.felszereles_hozzaad(k);
     }
 
-    public  void FelszerelesFelvetele() {
+    public void FelszerelesFelvetele() {
         Ures u = new Ures();
         Kesztyu k = new Kesztyu();
         Varos var = new Varos(k, false);
@@ -38,7 +38,7 @@ public class TestClass {
     }
 
 
-    public  void AmneziaLetapogatas() {
+    public void AmneziaLetapogatas() {
         Ures u = new Ures();
         Amnezia_kod ak = new Amnezia_kod();
         Labor l = new Labor(ak);
@@ -47,7 +47,7 @@ public class TestClass {
         v.kod_hozzaad(ak);
     }
 
-    public  void JatekLeptetes() {
+    public void JatekLeptetes() {
         GameManager gm = new GameManager(4);
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
@@ -56,13 +56,13 @@ public class TestClass {
         v.lep();
     }
 
-    public  void VitustancAgenstLetrehoz(Kod k) {
+    public void VitustancAgenstLetrehoz(Kod k) {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         v.agens_letrehoz(k);
     }
 
-    public  void VitustancAlattLep() {
+    public void VitustancAlattLep() {
         Ures u = new Ures();
         Ures u1 = new Ures();
         Ures u2 = new Ures();
@@ -77,7 +77,7 @@ public class TestClass {
         v.lep();
     }
 
-    public  void BenitasAlattLep() {
+    public void BenitasAlattLep() {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
@@ -87,7 +87,7 @@ public class TestClass {
         v.lep();
     }
 
-    public  void AmneziaAlattLep() {
+    public void AmneziaAlattLep() {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
@@ -99,7 +99,7 @@ public class TestClass {
         v.lep();
     }
 
-    public  void VedettsegAlattLep() {
+    public void VedettsegAlattLep() {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
@@ -110,33 +110,27 @@ public class TestClass {
         v.lep();
     }
 
-    public  void VirMagaraAgenstKen(Agens a) {
+    public void VirMagaraAgenstKen(Agens a) {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-
         v.kenes(v, a);
     }
 
-    /**TODO
-     * Vegig kene mennie az osszes felszerlesen (amugy a VirMagaraAgenst kennel is ) szvl ott nem gondolkodtam el ezen
-     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kene azt bele irni
-     * vagy feltetelben oda irni hogy a felszerelest csak akkor vegye figyelmbe ha a cel es aki ken az nem ugyan az
-     */
-    public  void VirKenVirt(Agens a) {
+    public void VirKenVirt(Agens a) {
         Ures u1 = new Ures();
         Ures u2 = new Ures();
         Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
         Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
-
+        v2.getFelszereles().add(new Kesztyu());
         v1.kenes(v2, a);
     }
 
-    public  void JatekVege() {
+    public void JatekVege() {
         GameManager gm = new GameManager(4);
-        gm.lep();
+        gm.endGame();
     }
 
-    public  void JatekKezdes() {
+    public void JatekKezdes() {
         GameManager gm = new GameManager(4);
         gm.addPlayer();
         gm.startGame();

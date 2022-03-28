@@ -1,273 +1,171 @@
-import java.io.*;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String args[]) {
-        Menu();}
+    public static void main(String[] args) {
+        TestClass test = new TestClass();
 
-        public static void Menu(){
-        Scanner sc = new Scanner(System.in);
-        boolean end=true;
-        while(end){
+        System.out.println("\n1. Jatek kezdes");
+        System.out.println("\n2. Jatekos hozzaadsa");
 
-            System.out.print(
-                    "1. Új játék\n" +
-                            "2. Virológus lép...\n" +
-                            "3. Anyagfelvétel...\n" +
-                            "4. Virológus ken...\n" +
-                            "5. Passz\n" +
-                            "6. Kilépés\n ");
-            switch (sc.nextInt()) {
-                case 1: //1 Új Játék
-                    JatekKezdes();
+        Scanner in = new Scanner(System.in);
+        int num = 2;
+        while (num == 2) {
+            num = in.nextInt();
+            switch (num) {
+                case 1:
+                    /**
+                     *Játék kezdes
+                     */
+                    System.out.println("\nJatek kezdes.");
+                    test.JatekKezdes();
+                    Jatek(num, in, test);
+                    test.JatekVege();
+                    //nemtodo: amit irtam commitba
                     break;
-                case 2: //2 Virológus lép
-                    System.out.print(
-                                     "1. ...üres mezőre\n" +
-                                    "2. ...raktárra\n" +
-                                    "3. ...laborra\n" +
-                                    "4. ...városra\n");
-                    switch (sc.nextInt()) {
-                        case 1: //2.1  üres mezőre
-                            Ures2Ures();
-                            break;
-                        case 2: //2.2 raktárra
-                            AnyagfelvetelRaktarbol();
-                            break;
-                        case 3: //2.3 laborra
-                            AmneziaLetapogatas();
-                            break;
-                        case 4: //2.4 városra
-                            FelszerelesFelvetele();
-                            break;
-                        default:
-                            System.out.print("Nincs ilyen menüpont!\n");
-                    }break;
-                case 3: //3 anyagfelvétel
-                    System.out.print(
-                            "1. ...bénult játékostól\n" +
-                                    "2. ...raktárból\n");
-                    switch (sc.nextInt()) {
-                        case 1: //3.1  bénult játékostól
-                            AnyagfelvetelBenultJatekostol();
-                            break;
-                        case 2: //3.2 raktárból
-                            AnyagfelvetelRaktarbol();
-                            break;
-                        default:
-                            System.out.print("Nincs ilyen menüpont!\n");
-                    }break;
-                case 4: //4 Virológus ken
-                    System.out.print(
-                            "1. ...magára...\n" +
-                                    "2. ...másra....\n");
-                    switch (sc.nextInt()) {
-                        case 1: //4.1  magára
-                            System.out.print(
-                                    "1. Amnézia\n" +
-                                            "2. Bénítottság\n" +
-                                            "3. Védettség\n" +
-                                            "4. Vitustánc\n");
-                            switch (sc.nextInt()) {
-                                case 1: //Amnezia
-                                    Amnezia a = new Amnezia();
-                                    VirMagaraAgenstKen(a);
-                                    break;
-                                case 2: //Bénítottság
-                                    Benitottsag b = new Benitottsag();
-                                    VirMagaraAgenstKen(b);
-                                    break;
-                                case 3: //Védettség
-                                    Vedettseg v = new Vedettseg();
-                                    VirMagaraAgenstKen(v);
-                                    break;
-                                case 4: //Vitustánc
-                                    Vitustanc vi = new Vitustanc();
-                                    VirMagaraAgenstKen(vi);
-                                    break;
-                                default:
-                                    System.out.print("Nincs ilyen menüpont!\n");
-                            } break;
-                        case 2: //4.2  másra
-                            System.out.print(
-                                    "1. Amnézia\n" +
-                                            "2. Bénítottság\n" +
-                                            "3. Védettség\n" +
-                                            "4. Vitustánc\n");
-                            switch (sc.nextInt()) {
-                                case 1: //Amnezia
-                                    Amnezia a = new Amnezia();
-                                    VirKenVirt(a);
-                                    break;
-                                case 2: //Bénítottság
-                                    Benitottsag b = new Benitottsag();
-                                    VirKenVirt(b);
-                                    break;
-                                case 3: //Védettség
-                                    Vedettseg v = new Vedettseg();
-                                    VirKenVirt(v);
-                                    break;
-                                case 4: //Vitustánc
-                                    Vitustanc vi = new Vitustanc();
-                                    VirKenVirt(vi);
-                                    break;
-                                default:
-                                    System.out.print("Nincs ilyen menüpont!\n");
-                            }break;
-                    }
-                case 5://Passz-Nem lép tovább, következő játékos jöhet
-                    JatekLeptetes();
-                    break;
-                case 6: //Kilépés
-                    JatekVege();
-                    end=false;
-                    break;
-                default:
-                    System.out.print("Nincs ilyen menüpont!\n");
+                case 2:
+                    System.out.println("\nUj jatekost adott hozza!");
             }
         }
-    }public static void Ures2Ures() {
-        Ures u1 = new Ures();
-        Ures u2 = new Ures();
-        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
-        v1.mozgas(u2);
+
+        /**
+         * Benitas alatt lep.
+         */
+        System.out.println("\nBenitas alatt lep");
+        test.BenitasAlattLep();
+
+        /**
+         * Amnezia alatt lep.
+         */
+        System.out.println("\nAmnezia alatt lep");
+        test.AmneziaAlattLep();
+
+        /**
+         * Vitustanc alatt lep.
+         */
+        //nemtodo: EZ valamiért nem uködik????
+        //System.out.println("\nVítustancalatt lep");
+        // test.VitustáncAlattLep();
+
+        /**
+         * Vedettseg alatt lep.
+         */
+        System.out.println("\nVedettseg alatt lep");
+        test.VedettsegAlattLep();
+
+        /**
+         * Anyag felvétel bénult játékostól
+         */
+        System.out.println("\n Anyag felvétel bénult játékostól");
+        test.AnyagfelvetelBenultJatekostol();
     }
 
-    public static void AnyagfelvetelRaktarbol() {
-        Ures u = new Ures();
-        Virologus v2 = new Virologus(u, new Anyag(0, 0), 10);
-        Raktar r = new Raktar(new Anyag(0, 0), false);
-        v2.mozgas(r);
-        v2.anyag_felvesz();
-    }
-
-    public static void AnyagfelvetelBenultJatekostol() {
-        Kesztyu k = new Kesztyu();
-        Ures u1 = new Ures();
-        Ures u2 = new Ures();
-        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
-        Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
-        v1.mozgas(u2);
-        v2.megtolt_tarolo(v1);
-        v2.felszereles_leadas(k);
-        v1.felszereles_hozzaad(k);
-    }
-
-    public static void FelszerelesFelvetele() {
-        Ures u = new Ures();
-        Kesztyu k = new Kesztyu();
-        Varos var = new Varos(k, false);
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        v.mozgas(var);
-        v.felszereles_hozzaad(k);
-    }
-
-
-    public static void AmneziaLetapogatas() {
-        Ures u = new Ures();
-        Amnezia_kod ak = new Amnezia_kod();
-        Labor l = new Labor(ak);
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        v.mozgas(l);
-        v.kod_hozzaad(ak);
-    }
-
-    public static void JatekLeptetes() {
-        GameManager gm = new GameManager(4);
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Amnezia a = new Amnezia();
-        gm.lep();
-        v.lep();
-    }
-
-    public static void VitustancAgenstLetrehoz(Kod k){
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        v.agens_letrehoz(k);
-    }
-
-    public static void VitustancAlattLep(){
-        Ures u = new Ures();
-        Ures u1 = new Ures();
-        Ures u2 = new Ures();
-        u.addMezo(u1);
-        u.addMezo(u2);
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Kesztyu k = new Kesztyu();
-        Vitustanc vit = new Vitustanc();
-        v.felszereles_hozzaad(k);
-        v.megkenve(vit);
-        vit.setVirologus(v);
-        v.lep();
-    }
-
-    public static void BenitasAlattLep() {
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Kesztyu k = new Kesztyu();
-        v.felszereles_hozzaad(k);
-        Benitottsag b = new Benitottsag();
-        v.megkenve(b);
-        v.lep();
-    }
-
-    public static void AmneziaAlattLep() {
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Kesztyu k = new Kesztyu();
-        v.felszereles_hozzaad(k);
-        v.kod_hozzaad(new Vedettseg_kod());
-        v.kod_hozzaad(new Amnezia_kod());
-        Amnezia a = new Amnezia();
-        v.megkenve(a);
-        v.lep();
-    }
-
-    public static void VedettsegAlattLep() {
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Kesztyu k = new Kesztyu();
-        v.felszereles_hozzaad(k);
-        v.megkenve(new Vitustanc());
-        v.megkenve(new Benitottsag());
-        v.megkenve(new Vedettseg());
-        v.lep();
-    }
-
-    public static void VirMagaraAgenstKen(Agens a){
-        Ures u = new Ures();
-        Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-
-        v.kenes(v, a);
-    }
-
-    /**TODO
-     * V�gig k�ne mennie az �sszes felszerl�sen (amugy a VirMagaraAgenst kenn�l is ) szvl ott nem gondolkodtam el ezen
-     * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy k�ne azt bele irni
-     * vagy felt�telben oda irni hogy a felszerel�st csak akkor vegye figyelmbe ha a c�l �s aki ken az nem ugyan az
+    /**
+     * A játék menüje , választási lehetőségei
+     * @param num  -beolvasott szam
+     * @param in   -Scanner
+     * @param test _teszt osztály
      */
-    public static void VirKenVirt(Agens a){
-        Ures u1 = new Ures();
-        Ures u2 = new Ures();
-        Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
-        Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
+    public static void Jatek(int num, Scanner in, TestClass test) {
+        boolean vege = true;
+        while (vege) {
+            //Kb. amiket tud majd csinálni
+            System.out.println("1. Mozog");
+            System.out.println("2. Keni magat");
+            System.out.println("3. Keni mast");
+            System.out.println("4. Vitustanc agenst csinal");
+            System.out.println("5. Vege");
+            num = in.nextInt();
+            switch (num) {
+                case 1:
+                    //választ hogy hova lép
+                    Kiiras2();
+                    num = in.nextInt();
+                    switch (num) {
+                        case 1:
+                            test.Ures2Ures();
+                            break;
+                        case 2:
+                            test.AnyagfelvetelRaktarbol();
+                            break;
+                        case 3:
+                            test.FelszerelesFelvetele();
+                            break;
+                        case 4:
+                            test.AmneziaLetapogatas();
+                            break;
+                    }
+                    break;
+                case 2:
+                    Kiiras();
+                    num = in.nextInt();
+                    switch (num) {
+                        case 1:
+                            Vitustanc a = new Vitustanc();
+                            test.VirMagaraAgenstKen(a);
+                            break;
+                        case 2:
+                            Benitottsag b = new Benitottsag();
+                            test.VirMagaraAgenstKen(b);
+                            break;
+                        case 3:
+                            Vedettseg c = new Vedettseg();
+                            test.VirMagaraAgenstKen(c);
+                            break;
+                        case 4:
+                            Amnezia d = new Amnezia();
+                            test.VirMagaraAgenstKen(d);
+                            break;
+                    }
+                    break;
+                case 3:
+                    Kiiras();
+                    num = in.nextInt();
+                    switch (num) {
+                        case 1:
+                            Vitustanc a = new Vitustanc();
+                            test.VirKenVirt(a);
+                            break;
+                        case 2:
+                            Benitottsag b = new Benitottsag();
+                            test.VirKenVirt(b);
+                            break;
+                        case 3:
+                            Vedettseg c = new Vedettseg();
+                            test.VirKenVirt(c);
+                            break;
+                        case 4:
+                            Amnezia d = new Amnezia();
+                            test.VirKenVirt(d);
+                            break;
+                    }
+                    break;
+                case 4:
+                    Vitustanc_kod k = new Vitustanc_kod();
+                    test.VitustancAgenstLetrehoz(k);
+                    break;
+                case 5:
+                    vege = false;
 
-        v1.kenes(v2, a);
+                    break;
+
+
+            }
+            test.JatekLeptetes();
+        }
     }
 
-    public static void JatekVege() {
-        GameManager gm = new GameManager(4);
-        gm.lep();
-
+    public static void Kiiras() {
+        System.out.println("1. Vitustanccal");
+        System.out.println("2. Benitoval");
+        System.out.println("3. Vedettseggel");
+        System.out.println("4. Amneziaval");
     }
 
-    public static void JatekKezdes() {
-        GameManager gm = new GameManager(4);
-        gm.addPlayer();
-        gm.startGame();
-
+    public static void Kiiras2() {
+        System.out.println("1. Ures mezore");
+        System.out.println("2. Raktarra");
+        System.out.println("3. Varosra");
+        System.out.println("4. Laborra");
     }
-
 
 }

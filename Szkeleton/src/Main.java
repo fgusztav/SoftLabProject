@@ -18,54 +18,21 @@ public class Main {
                      */
                     System.out.println("\nJatek kezdes.");
                     test.JatekKezdes();
-                    Jatek(num, in, test);
+                    Jatek(in, test);
                     test.JatekVege();
-                    //TODO: amit irtam commitba
                     break;
                 case 2:
                     System.out.println("\nUj jatekost adott hozza!");
             }
         }
-
-        /**
-         * Benitas alatt lep.
-         */
-        System.out.println("\nBenitas alatt lep");
-        test.BenitasAlattLep();
-
-        /**
-         * Amnezia alatt lep.
-         */
-        System.out.println("\nAmnezia alatt lep");
-        test.AmneziaAlattLep();
-
-        /**
-         * Vitustanc alatt lep.
-         */
-        //TODO: EZ valamiért nem uködik????
-        //System.out.println("\nVítustancalatt lep");
-        // test.VitustáncAlattLep();
-
-        /**
-         * Vedettseg alatt lep.
-         */
-        System.out.println("\nVedettseg alatt lep");
-        test.VedettsegAlattLep();
-
-        /**
-         * Anyag felvétel bénult játékostól
-         */
-        System.out.println("\n Anyag felvétel bénult játékostól");
-        test.AnyagfelvetelBenultJatekostol();
     }
 
     /**
      * A játék menüje , választási lehetőségei
-     * @param num  -beolvasott szam
      * @param in   -Scanner
      * @param test _teszt osztály
      */
-    public static void Jatek(int num, Scanner in, TestClass test) {
+    public static void Jatek(Scanner in, TestClass test) {
         boolean vege = true;
         while (vege) {
             //Kb. amiket tud majd csinálni
@@ -74,7 +41,7 @@ public class Main {
             System.out.println("3. Keni mast");
             System.out.println("4. Vitustanc agenst csinal");
             System.out.println("5. Vege");
-            num = in.nextInt();
+            int num = in.nextInt();
             switch (num) {
                 case 1:
                     //választ hogy hova lép
@@ -97,7 +64,6 @@ public class Main {
                     break;
                 case 2:
                     Kiiras();
-                    // választ hogy mit ken
                     num = in.nextInt();
                     switch (num) {
                         case 1:
@@ -129,6 +95,11 @@ public class Main {
                         case 2:
                             Benitottsag b = new Benitottsag();
                             test.VirKenVirt(b);
+                            /**
+                             * Anyag felvétel bénult játékostól
+                             */
+                            System.out.println("\n Anyag felvétel bénult játékostól");
+                            test.AnyagfelvetelBenultJatekostol();
                             break;
                         case 3:
                             Vedettseg c = new Vedettseg();
@@ -145,18 +116,13 @@ public class Main {
                     test.VitustancAgenstLetrehoz(k);
                     break;
                 case 5:
-                    //csak hogy egyszer kilépjen
                     vege = false;
-
                     break;
-
-
             }
             test.JatekLeptetes();
         }
     }
 
-    //csak kirija ezeket a dolgokat
     public static void Kiiras() {
         System.out.println("1. Vitustanccal");
         System.out.println("2. Benitoval");
@@ -164,7 +130,6 @@ public class Main {
         System.out.println("4. Amneziaval");
     }
 
-    //csak kirija ezeket a dolgokat
     public static void Kiiras2() {
         System.out.println("1. Ures mezore");
         System.out.println("2. Raktarra");
