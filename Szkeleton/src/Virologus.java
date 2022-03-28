@@ -170,4 +170,5 @@ public class Virologus implements Leptetheto{
     public void setIsmert_hatasok(List<Kod> ismert_hatasok) {
         this.ismert_hatasok = ismert_hatasok;
     }
+
 }

@@ -29,7 +29,7 @@ public class GameManager implements Leptetheto{
     public int getScore(){
 
         System.out.println("Score getter.");
-        return 4;
+        return 3;
     }
 
     /**
