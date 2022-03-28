@@ -6,81 +6,6 @@ public class Main {
 
         TestClass test = new TestClass();
 
-        /* *//**
-         * A virológus lép üres mezőről üres mezőre.
-         *//*
-        System.out.println("\nA virolegus lep ures mezorol ures mezore");
-        Ures2Ures();
-
-        *//**
-         * Anyagfelvétel raktárból.
-         *//*
-        System.out.println("\nAnyagfelvetel rakterbol");
-        AnyagfelvetelRaktarbol();
-
-        *//**
-         * Anyagfelvétel bénult játékostól.
-         *//*
-        System.out.println("\nAnyagfelvetel benult jatekostol");
-        AnyagfelvetelBenultJatekostol();
-
-        *//**
-         * Felszerelés felvétele.
-         *//*
-        System.out.println("\nFelszereles felvetele");
-        FelszerelesFelvetele();
-
-        *//**
-         * Kód letapogatása.
-         *//*
-        System.out.println("\nKod letapogatasa");
-        AmneziaLetapogatas();
-
-        *//**
-         * Játék léptetése.
-         *//*
-        System.out.println("\nJatek leptetese");
-        JatekLeptetes();
-
-*//**
-         * A virológus Vitustánc ágenst hoz létre.
-         *//*
-        System.out.println("\nA virológus Vitustánc ágenst hoz létre");
-        Vitustanc_kod k = new Vitustanc_kod();
-        VitustancAgenstLetrehoz(k);
-
-
-*//**
-         * A virológus ágenst ken magára.
-         *//*
-        System.out.println("\nA virológus ágenst ken magára.");
-        Vedettseg a = new Vedettseg();
-        VirMagaraAgenstKen(a);
-
-*//**
-         * A virológus ágenst ken másra.
-         *//*
-        System.out.println("\nA virológus ágenst ken másra.");
-        VirKenVirt(a);
-
-
-        *//**
-         *Játék vége
-         *//*
-        System.out.println("\nJáték Vége.");
-        JatekVege();
-
-        *//**
-         *Játék kezdes
-         *//*
-        System.out.println("\nJáték kezdes.");
-        JatekVege();
-
-        *//**
-         * Vitustanc alatt lep.
-         *//*
-        System.out.println("\nVitustanc alatt lep");
-        VitustáncAlattLep();*/
 
         System.out.println("\n1 . Játék kezdés");
         System.out.println("\n2 . Játékos hozzáadása");
@@ -98,6 +23,7 @@ public class Main {
                     test.JatekKezdes();
                     Jatek(num, in, test);
                     test.JatekVege();
+                    //TODO: amit irtam commitba
                     break;
 
 
@@ -119,17 +45,23 @@ public class Main {
         test.AmneziaAlattLep();
 
         /**
+         * Vitustanc alatt lep.
+         */
+        //TODO: EZ valamiért nem uködik????
+        //System.out.println("\nVítustancalatt lep");
+        // test.VitustáncAlattLep();
+
+        /**
          * Vedettseg alatt lep.
          */
         System.out.println("\nVedettseg alatt lep");
         test.VedettsegAlattLep();
 
         /**
-         * Vitustanc alatt lep.
+         * Anyag felvétel bénult játékostól
          */
-        System.out.println("\nVítustancalatt lep");
-        test.VitustáncAlattLep();
-
+        System.out.println("\n Anyag felvétel bénult játékostól");
+        test.AnyagfelvetelBenultJatekostol();
 
     }
 
@@ -143,13 +75,16 @@ public class Main {
     public static void Jatek(int num, Scanner in, TestClass test) {
         boolean vege = true;
         while (vege) {
+            //Kb. amiket tud majd csinálni
             System.out.println("1 . Mozog");
             System.out.println("2 . Keni Magát");
             System.out.println("3 . Keni Mást");
-            System.out.println("4 . vége");
+            System.out.println("4 . Vitus Tánc ágenst csinál");
+            System.out.println("5 . vége");
             num = in.nextInt();
             switch (num) {
                 case 1:
+                    //választ hogy hova lép
                     Kiiras2();
                     num = in.nextInt();
                     switch (num) {
@@ -169,6 +104,7 @@ public class Main {
                     break;
                 case 2:
                     Kiiras();
+                    // választ hogy mit ken
                     num = in.nextInt();
                     switch (num) {
                         case 1:
@@ -213,6 +149,11 @@ public class Main {
                     }
                     break;
                 case 4:
+                    Vitustanc_kod k = new Vitustanc_kod();
+                    test.VitustancAgenstLetrehoz(k);
+                    break;
+                case 5:
+                    //csak hogy egyszer kilépjen
                     vege = false;
 
                     break;

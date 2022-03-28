@@ -119,7 +119,7 @@ public class TestClass {
         v.kenes(v, a);
     }
 
-    /**
+    /**TODO
      * Végig kéne mennie az összes felszerlésen (amugy a VirMagaraAgenst kennél is ) szvl ott nem gondolkodtam el ezen
      * mert nem volt a szekvenciaban, de most hirtelen nem tudom hogy kéne azt bele irni
      * vagy feltételben oda irni hogy a felszerelést csak akkor vegye figyelmbe ha a cél és aki ken az nem ugyan az
