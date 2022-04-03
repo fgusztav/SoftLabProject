@@ -1,6 +1,6 @@
 public abstract class Agens implements Leptetheto{
-    protected int idotartam;
-    protected boolean kenve;
+    private int idotartam;
+    private boolean kenve;
     private Virologus virologus;
 
 

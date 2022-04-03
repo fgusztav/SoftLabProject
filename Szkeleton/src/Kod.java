@@ -1,5 +1,5 @@
 public abstract class Kod {
-    protected Anyag ar;
+    private Anyag ar;
 
     public Anyag getAr() {return ar; }
     public void setAr(Anyag ar) {this.ar = ar;}
