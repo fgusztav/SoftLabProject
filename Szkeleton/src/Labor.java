@@ -1,12 +1,12 @@
 public class Labor extends Mezo {
-    private Kod k;
+    private Kod kod;
 
-    public Labor(Kod h) {
-        this.k = h;
+    public Labor(Kod kod) {
+        this.kod = kod;
     }
 
-    public Kod getH() {return k;}
-    public void setAgens(Kod h) {this.k = h;}
+    public Kod getKod() {return kod;}
+    public void setKod(Kod k) {this.kod = kod;}
 
     /**
      * Elfogadja a megadott virologust a mezőre
