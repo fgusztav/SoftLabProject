@@ -40,9 +40,9 @@ public class TestClass {
 
     public void AmneziaLetapogatas() {
         Ures u = new Ures();
-        Amnezia_kod ak = new Amnezia_kod();
-        Labor l = new Labor(ak);
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
+        Amnezia_kod ak = new Amnezia_kod(v);
+        Labor l = new Labor(ak);
         v.mozgas(l);
         v.kod_hozzaad(ak);
     }
@@ -51,7 +51,7 @@ public class TestClass {
         GameManager gm = new GameManager(4);
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        Amnezia a = new Amnezia();
+        Amnezia a = new Amnezia(v);
         gm.lep();
         v.lep();
     }
@@ -70,7 +70,7 @@ public class TestClass {
         u.addMezo(u2);
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
-        Vitustanc vit = new Vitustanc();
+        Vitustanc vit = new Vitustanc(v);
         v.felszereles_hozzaad(k);
         v.megkenve(vit);
         vit.setVirologus(v);
@@ -82,7 +82,7 @@ public class TestClass {
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
         v.felszereles_hozzaad(k);
-        Benitottsag b = new Benitottsag();
+        Benitottsag b = new Benitottsag(v);
         v.megkenve(b);
         v.lep();
     }
@@ -92,9 +92,9 @@ public class TestClass {
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
         v.felszereles_hozzaad(k);
-        v.kod_hozzaad(new Vedettseg_kod());
-        v.kod_hozzaad(new Amnezia_kod());
-        Amnezia a = new Amnezia();
+        v.kod_hozzaad(new Vedettseg_kod(v));
+        v.kod_hozzaad(new Amnezia_kod(v));
+        Amnezia a = new Amnezia(v);
         v.megkenve(a);
         v.lep();
     }
@@ -104,9 +104,9 @@ public class TestClass {
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
         Kesztyu k = new Kesztyu();
         v.felszereles_hozzaad(k);
-        v.megkenve(new Vitustanc());
-        v.megkenve(new Benitottsag());
-        v.megkenve(new Vedettseg());
+        v.megkenve(new Vitustanc(v));
+        v.megkenve(new Benitottsag(v));
+        v.megkenve(new Vedettseg(v));
         v.lep();
     }
 

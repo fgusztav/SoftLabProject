@@ -3,8 +3,6 @@ public abstract class Agens implements Leptetheto{
     private boolean kenve;
     private Virologus virologus;
 
-
-
     public int getIdotartam() {return idotartam; }
     public void setIdotartam(int idotartam) {this.idotartam = idotartam; }
 
@@ -14,11 +12,16 @@ public abstract class Agens implements Leptetheto{
     public Virologus getVirologus() {
         return virologus;
     }
-
     public void setVirologus(Virologus virologus) {
         this.virologus = virologus;
     }
 
+    public Agens () {}
+
+    public Agens(Virologus v){
+        kenve = false;
+        virologus = v;
+    }
 
     /**
      * Körönként csökkenti az Ágens objektum időtartamát.

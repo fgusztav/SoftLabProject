@@ -1,11 +1,16 @@
 public class Vedettseg_kod extends  Kod {
 
+    public Vedettseg_kod(Virologus v) {
+        setV(v);
+        setAr(new Anyag(10, 10));
+    }
+
     /**
      * Ezzel a metódussal hozzuk létre az védettség ágenst.
-     * @param a Az ágens elkészítéséhez szükséges anyagmennyiség.
+     * @param v
      */
-    public Vedettseg letrehoz (Anyag a){
+    public Vedettseg letrehoz (Virologus v){
         System.out.println("Vedettseg_kod.letrehoz() ->Letrehoz vedettseg.");
-        return new Vedettseg();
+        return new Vedettseg(v);
     }
 }

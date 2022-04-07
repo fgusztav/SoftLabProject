@@ -16,6 +16,23 @@ public class Virologus implements Leptetheto{
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
 
+    //Getterek-setterek:
+    public Mezo getMezo() {return mezo; }
+    public void setMezo(Mezo mezo) {this.mezo = mezo; }
+
+    public Anyag getTarolo() {return tarolo; }
+    public void setTarolo(Anyag tarolo) {this.tarolo = tarolo; }
+
+    public int getMaxAnyag() {return maxAnyag; }
+    public void setMaxAnyag(int maxAnyag) {this.maxAnyag = maxAnyag; }
+
+    public List<Felszereles> getFelszereles() {return felszereles; }
+    public List<Agens> getRakenve(){return rakenve;}
+
+    public List<Kod> getIsmert_hatasok() { return ismert_hatasok; }
+    public void setIsmert_hatasok(List<Kod> ismert_hatasok) { this.ismert_hatasok = ismert_hatasok; }
+
+
     /**
      * Virológus osztály konstruktora.
      * @param mezo Aktuális mező ahol a virológus tartózkodik.
@@ -34,7 +51,7 @@ public class Virologus implements Leptetheto{
      * @param a Ágens, amivel kennek.
      */
     public void kenes(Virologus cel, Agens a) {
-        System.out.println("Virologus.kenes() -> Kenes.");
+        //System.out.println("Virologus.kenes() -> Kenes.");
         agens.remove(a);
         if (cel != this) {
             for (int i = 0; i < cel.getFelszereles().size(); i++)
@@ -52,7 +69,7 @@ public class Virologus implements Leptetheto{
      */
     public void megkenve(Agens agens) {
         rakenve.add(agens);
-        System.out.println("Virologus.megkenve() ->A kent hatasa hozzaadva.");
+        //System.out.println("Virologus.megkenve() ->A kent hatasa hozzaadva.");
     }
 
     /**
@@ -60,7 +77,8 @@ public class Virologus implements Leptetheto{
      * @param k Letapogatott kód.
      */
     public void kod_hozzaad(Kod k) {
-        System.out.println("Virologus. kod_hozzaad() ->Uj kod hozzaadva.");
+        ismert_hatasok.add(k);
+        //System.out.println("Virologus. kod_hozzaad() ->Uj kod hozzaadva.");
     }
 
     /**
@@ -69,7 +87,7 @@ public class Virologus implements Leptetheto{
      */
     public void felszereles_hozzaad(Felszereles f) {
         felszereles.add(f);
-        System.out.println("Virologus.felszereles_hozzaad() -> Uj felszereles hozzaad.");
+        //System.out.println("Virologus.felszereles_hozzaad() -> Uj felszereles hozzaad.");
     }
 
     /**
@@ -77,7 +95,7 @@ public class Virologus implements Leptetheto{
      * @param f Leadott felszerelés.
      */
     public void felszereles_leadas(Felszereles f) {
-        System.out.println("Virologus.felszereles_leadas() -> Felszereles leadva.");
+        //System.out.println("Virologus.felszereles_leadas() -> Felszereles leadva.");
     }
 
     /**
@@ -85,7 +103,7 @@ public class Virologus implements Leptetheto{
      * @param m Az a mező, amelyre a virológust áthelyezzük.
      */
     public void mozgas(Mezo m) {
-        System.out.println("Virologus.mozgas() -> Virologus elmozdul");
+        //System.out.println("Virologus.mozgas() -> Virologus elmozdul");
         mezo.eltavolit(this);
         m.elfogad(this);
         mezo = m;
@@ -95,21 +113,21 @@ public class Virologus implements Leptetheto{
      *  A léptethető függvénye, minden körben lép a virológus/körönként meghívjuk.
      */
     public void lep() {
-        System.out.println("Virologus.lep() -> Virologus leptetese.");
-        agens.add(new Amnezia());
-        agens.add(new Vitustanc());
-        agens.add(new Vedettseg());
-        agens.add(new Benitottsag());
-        for (int i = 0; i < agens.size(); i++){
-            agens.get(i).lep();
-            //agens.get(i).getIdotartam();
-            //Nincs hasznalva
+        //System.out.println("Virologus.lep() -> Virologus leptetese.");
+        for (int i = 0; i < rakenve.size(); i++){
+            rakenve.get(i).lep();
+            if (rakenve.get(i).getIdotartam() == 0){
+                rakenve.remove(rakenve.get(i));
+            }
         }
         for(int i = 0; i < felszereles.size();i++){
             felszereles.get(i).felszerelesHatas(this);
         }
         for (int i = 0; i < rakenve.size(); i++) {
             rakenve.get(i).hatas(this);
+        }
+        for (int i = 0; i < rakenve.size(); i++){
+            rakenve.get(i).setKenve(true);
         }
     }
 
@@ -128,8 +146,12 @@ public class Virologus implements Leptetheto{
      * @return Megvehető-e az ágens (true/false).
      */
     public boolean check_ar(Kod k) {
-        System.out.println("Virologus.check_ar() -> Ar leellenorizve.");
-        return true;
+        //System.out.println("Virologus.check_ar() -> Ar leellenorizve.");
+        if (tarolo.getAminosav() >= k.getAr().getAminosav() && tarolo.getNukleotid() >= k.getAr().getAminosav()){
+            return true;
+        }
+        return false;
+
     }
 
     /**
@@ -140,7 +162,7 @@ public class Virologus implements Leptetheto{
         System.out.println("Virologus.agens_letrehoz() -> Agens letrehozva");
         Anyag a = new Anyag(5, 2);
         if(check_ar(k)) {
-            k.letrehoz(a);
+            k.letrehoz(this);
             setTarolo(a);
         }
     }
@@ -153,27 +175,4 @@ public class Virologus implements Leptetheto{
     public void megtolt_tarolo(Virologus v) {
         System.out.println("Virologus.megtolt_tarolo() -> Tarolo megtoltve.");
     }
-
-    //Getterek-setterek:
-    public Mezo getMezo() {return mezo; }
-    public void setMezo(Mezo mezo) {this.mezo = mezo; }
-
-    public Anyag getTarolo() {return tarolo; }
-    public void setTarolo(Anyag tarolo) {this.tarolo = tarolo; }
-
-    public int getMaxAnyag() {return maxAnyag; }
-    public void setMaxAnyag(int maxAnyag) {this.maxAnyag = maxAnyag; }
-
-    public List<Felszereles> getFelszereles() {return felszereles; }
-    public List<Agens   > getRakenve(){return rakenve;}
-
-
-    public List<Kod> getIsmert_hatasok() {
-        return ismert_hatasok;
-    }
-
-    public void setIsmert_hatasok(List<Kod> ismert_hatasok) {
-        this.ismert_hatasok = ismert_hatasok;
-    }
-
 }

@@ -1,5 +1,10 @@
 public class Vedettseg extends Agens {
 
+    public Vedettseg (Virologus v){
+        setIdotartam(3);
+        setKenve(false);
+        setVirologus(v);
+    }
 
     /**
      * Körönként csökkenti a hatás időtartamát.

@@ -34,6 +34,7 @@ public class Main {
      * @param test _teszt osztály
      */
     public static void Jatek(Scanner in, TestClass test) {
+        Virologus v = new Virologus(new Ures(), new Anyag (0, 0), 10);
         boolean vege = true;
         while (vege) {
             //Kb. amiket tud majd csinálni
@@ -68,19 +69,19 @@ public class Main {
                     num = in.nextInt();
                     switch (num) {
                         case 1:
-                            Vitustanc a = new Vitustanc();
+                            Vitustanc a = new Vitustanc(v);
                             test.VirMagaraAgenstKen(a);
                             break;
                         case 2:
-                            Benitottsag b = new Benitottsag();
+                            Benitottsag b = new Benitottsag(v);
                             test.VirMagaraAgenstKen(b);
                             break;
                         case 3:
-                            Vedettseg c = new Vedettseg();
+                            Vedettseg c = new Vedettseg(v);
                             test.VirMagaraAgenstKen(c);
                             break;
                         case 4:
-                            Amnezia d = new Amnezia();
+                            Amnezia d = new Amnezia(v);
                             test.VirMagaraAgenstKen(d);
                             break;
                     }
@@ -90,11 +91,11 @@ public class Main {
                     num = in.nextInt();
                     switch (num) {
                         case 1:
-                            Vitustanc a = new Vitustanc();
+                            Vitustanc a = new Vitustanc(v);
                             test.VirKenVirt(a);
                             break;
                         case 2:
-                            Benitottsag b = new Benitottsag();
+                            Benitottsag b = new Benitottsag(v);
                             test.VirKenVirt(b);
                             /**
                              * Anyag felvétel bénult játékostól
@@ -103,17 +104,17 @@ public class Main {
                             test.AnyagfelvetelBenultJatekostol();
                             break;
                         case 3:
-                            Vedettseg c = new Vedettseg();
+                            Vedettseg c = new Vedettseg(v);
                             test.VirKenVirt(c);
                             break;
                         case 4:
-                            Amnezia d = new Amnezia();
+                            Amnezia d = new Amnezia(v);
                             test.VirKenVirt(d);
                             break;
                     }
                     break;
                 case 4:
-                    Vitustanc_kod k = new Vitustanc_kod();
+                    Vitustanc_kod k = new Vitustanc_kod(v);
                     test.VitustancAgenstLetrehoz(k);
                     break;
                 case 5:

@@ -3,6 +3,12 @@ import java.util.Random;
 
 public class Vitustanc extends Agens{
 
+    public Vitustanc (Virologus v) {
+        setIdotartam(3);
+        setKenve(false);
+        setVirologus(v);
+    }
+
     /**
      * Körönként csökkenti a hatás időtartamát.
      */

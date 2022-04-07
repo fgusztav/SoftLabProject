@@ -1,10 +1,19 @@
-public class Benitottsag extends Agens{
-    
+public class Benitottsag extends Agens {
+
+    public Benitottsag(Virologus v){
+        setIdotartam(3);
+        setKenve(false);
+        setVirologus(v);
+    }
+
     /**
-     * Körönként csökkenti a hatás időtartamát.
+     * Körönként csökkenti a hatás időtartamát úgy,
+     * hogy az abstract ősosztály időtartam függvényét csökkenti mindig eggyel;
      */
     public void lep() {
-        System.out.println("Benitottsag.lep() -> Bénítottság hatás léptetése.");
+        //System.out.println("Benitottsag.lep() -> Bénítottság hatás léptetése.");
+        int ido = getIdotartam();
+        setIdotartam(ido--);
     }
 
     /**
@@ -13,8 +22,7 @@ public class Benitottsag extends Agens{
      */
     public void hatas (Virologus v) {
         // Virológus körének vége
+        //System.out.println("Benitottsag.hatas() -> Benitottsag hatasa.");
 
-
-        System.out.println("Benitottsag.hatas() -> Benitottsag hatasa.");
     }
 }
