@@ -1,17 +1,23 @@
+import java.util.ArrayList;
+
 public class GameManager implements Leptetheto {
     private int kodok;
+    private ArrayList<Virologus> virologusok;
 
-    public GameManager(int kodok) {
-        this.kodok = kodok;
+    public GameManager(int kodokszama) {
+        this.kodok = kodokszama;
+        this.virologusok  = new ArrayList<>();
     }
 
     /**
      * Minden körben új játékost léptet.
      */
     public void lep() {
-        System.out.println("GameManager.lep() -> GameManeger leptetes.");
-        if (getScore() == 4)
-            endGame();
+        //System.out.println("GameManager.lep() -> GameManeger leptetes.");
+        for (int i = 0; i < virologusok.size(); i++) {
+            if (getScore(virologusok.get(i)) == 4)
+                endGame();
+        }
     }
 
     /**
@@ -24,16 +30,17 @@ public class GameManager implements Leptetheto {
     /**
      * A játékosoktól lekérdezi a pontjaikat.
      */
-    public int getScore() {
-        System.out.println("GameManager.getScore() -> Score getter.");
-        return 3;
+    public int getScore(Virologus v) {
+        //System.out.println("GameManager.getScore() -> Score getter.");
+        return v.getIsmert_hatasok().size();
     }
 
     /**
      * A játék végén hivódik meg.
      */
     public void endGame() {
-        System.out.println("GameManager.endGame() -> Game over!");
+        //System.out.println("GameManager.endGame() -> Game over!");
+
     }
 
     /**

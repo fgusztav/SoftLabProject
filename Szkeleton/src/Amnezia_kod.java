@@ -9,6 +9,6 @@ public class Amnezia_kod extends Kod{
      */
     public Amnezia letrehoz (){
         //System.out.println("Amnezia_kod.letrehoz() -> Letrehoz amnezia.");
-        return new Amnezia(v);
+        return new Amnezia(getV());
     }
 }

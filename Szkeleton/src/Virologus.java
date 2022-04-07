@@ -161,8 +161,8 @@ public class Virologus implements Leptetheto{
         //System.out.println("Virologus.agens_letrehoz() -> Agens letrehozva");
         Anyag ujTarolo = new Anyag(tarolo.getNukleotid()-k.getAr().getNukleotid(),tarolo.getAminosav()-k.getAr().getAminosav());
         if(check_ar(k)) {
-            k.letrehoz(this);
-            setTarolo(a);
+            k.letrehoz();
+            setTarolo(ujTarolo);
         }
     }
 

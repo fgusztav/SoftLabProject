@@ -9,6 +9,6 @@ public class Benitottsag_kod extends Kod{
      */
     public Benitottsag letrehoz (){
         //System.out.println("Benitottsag_kod.letrehoz() ->Letrehoz benitottsag.");
-        return new Benitottsag(this.getV());
+        return new Benitottsag(getV());
     }
 }
