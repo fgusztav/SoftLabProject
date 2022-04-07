@@ -6,10 +6,9 @@ public class Vitustanc_kod extends Kod {
     }
     /**
      * Ezzel a metódussal hozzuk létre az vítustánc ágenst.
-     * @param v
      */
-    public Vitustanc letrehoz (Virologus v){
+    public Vitustanc letrehoz (){
         System.out.println("Vitustanc_kod.letrehoz() ->Letrehoz vitustanc.");
-        return new Vitustanc(v);
+        return new Vitustanc(this.getV());
     }
 }

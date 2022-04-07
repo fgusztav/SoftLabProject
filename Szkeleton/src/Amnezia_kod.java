@@ -6,9 +6,8 @@ public class Amnezia_kod extends Kod{
 
     /**
      * Ezzel a metódussal hozzuk létre az amnézia ágenst.
-     * @param v
      */
-    public Amnezia letrehoz (Virologus v){
+    public Amnezia letrehoz (){
         //System.out.println("Amnezia_kod.letrehoz() -> Letrehoz amnezia.");
         return new Amnezia(v);
     }

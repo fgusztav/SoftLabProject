@@ -16,7 +16,6 @@ public abstract class Kod {
 
     /**
      * Ezzel a metódussal hozunk létre egy ágenst.
-     * @param v
      */
-    public abstract Agens letrehoz (Virologus v);
+    public abstract Agens letrehoz ();
 }
