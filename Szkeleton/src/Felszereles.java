@@ -1,13 +1,21 @@
 public abstract class Felszereles {
-
+    private int lejarat;
 
     public Felszereles() {
+    }
+
+    //getter-setter:
+    public int getLejarat() {
+        return lejarat;
+    }
+    public void setLejarat(int lejarat) {
+        this.lejarat = lejarat;
     }
 
     /**
      * A felszerelések hatásainak absztrakt függvénye.
      *
-     * @param v Virológus akire hat a felszerelés hatás.
      */
-    public abstract void felszerelesHatas(Virologus v);
+    public abstract void felszerelesHatas(Virologus forras, Virologus cel, Agens a);
+
 }

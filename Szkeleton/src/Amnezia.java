@@ -9,7 +9,7 @@ public class Amnezia extends Agens {
     /**
      * Körönként csökkenti a hatás időtartamát.
      */
-    public void lep() {
+    public void lep() { //TODO: Balint, ezt h? 1.: keneskor hatas meghivodik? 2. ha a setIdotartam 1,akkor meg Agenskent nem jar le?
         //System.out.println("Amnezia.lep() ->Amnezia hatas leptetese.")
     }
 

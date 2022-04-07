@@ -38,9 +38,11 @@ public class GameManager implements Leptetheto {
     /**
      * A játék végén hivódik meg.
      */
-    public void endGame() {
+    public void endGame() { //TODO: Dokumetntumban beleirni modositasokban (kimeneti nyelv!), hogy a játék végén kiírja a konzolra a játékosok pontszámát.
         //System.out.println("GameManager.endGame() -> Game over!");
-
+        for (int i = 0; i < virologusok.size(); i++) {
+            System.out.println(virologusok.get(i).getUserName()+" "+getScore(virologusok.get(i)));
+        }
     }
 
     /**

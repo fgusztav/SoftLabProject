@@ -10,10 +10,10 @@ public class Zsak extends Felszereles {
 
     /**
      * A virológus tárolójának méretét növeli.
-     * @param v Virológus akire hat a felszerelés hatás.
+     * @param cel Virológus akire hat a felszerelés hatás.
      */
     @Override
-    public void felszerelesHatas(Virologus v) {
-        System.out.println("Zsak.felszerelesHatas() -> Zsak hatas.");
+    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) {
+        //System.out.println("Zsak.felszerelesHatas() -> Zsak hatas.");
     }
 }

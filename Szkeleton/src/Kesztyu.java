@@ -1,12 +1,16 @@
 public class Kesztyu extends Felszereles {
+    public Kesztyu() {
+        setLejarat(3);
+    }
 
-    public Kesztyu() {}
     /**
      * A felkent ágenst visszadobja a kenő virológusra.
-     * @param v Virológus akire hat a felszerelés hatás.
+     *
      */
     @Override
-    public void felszerelesHatas(Virologus v) {
-        System.out.println("Kesztyu.felszerelesHatas() -> Kesztyu hatas.");
+    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) {
+        //System.out.println("Kesztyu.felszerelesHatas() -> Kesztyu hatas.");
+        forras.megkenve(a);
+        a = null;
     }
 }

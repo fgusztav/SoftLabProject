@@ -1,7 +1,11 @@
-public abstract class Agens implements Leptetheto{
+import java.util.concurrent.atomic.AtomicLongArray;
+
+public abstract class Agens implements Leptetheto, Cloneable {
     private int idotartam;
     private boolean kenve;
     private Virologus virologus;
+
+
 
     public int getIdotartam() {return idotartam; }
     public void setIdotartam(int idotartam) {this.idotartam = idotartam; }
@@ -21,6 +25,16 @@ public abstract class Agens implements Leptetheto{
     public Agens(Virologus v){
         kenve = false;
         virologus = v;
+    }
+
+    @Override
+    protected Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**

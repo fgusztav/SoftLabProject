@@ -15,8 +15,12 @@ public class Virologus implements Leptetheto{
     private List<Agens> rakenve = new ArrayList<>();
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
+    private String userName;
 
     //Getterek-setterek:
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
+
     public Mezo getMezo() {return mezo; }
     public void setMezo(Mezo mezo) {this.mezo = mezo; }
 
@@ -50,25 +54,30 @@ public class Virologus implements Leptetheto{
      * @param cel Virologus akit kennek.
      * @param a Ágens, amivel kennek.
      */
-    public void kenes(Virologus cel, Agens a) {
+    public void kenes(Virologus forras, Virologus cel, Agens a) {
         //System.out.println("Virologus.kenes() -> Kenes.");
         agens.remove(a);
         if (cel != this) {
             for (int i = 0; i < cel.getFelszereles().size(); i++)
             {
-                cel.getFelszereles().get(i).felszerelesHatas(cel);
+                cel.getFelszereles().get(i).felszerelesHatas(this, cel, a);
             }
         }
-        megkenve(a);
-        a.hatas(cel);
+
+        if (a != null) {
+            cel.megkenve(a);
+        }
     }
 
     /**
      * Ha az adott virológust megkenik, akkor ez a függvény hívodik meg, és az adott ágens bekerül a "rakenve" listájába.
-     * @param agens Az ágens, amivel kenték a virológust.
+     * @param a1 Az ágens, amivel kenték a virológust.
      */
-    public void megkenve(Agens agens) {
-        rakenve.add(agens);
+    public void megkenve(Agens a1) {
+        Agens a2 = (Agens) a1.clone();
+        rakenve.add(a2);
+
+        a2.hatas(this);
         //System.out.println("Virologus.megkenve() ->A kent hatasa hozzaadva.");
     }
 
@@ -120,9 +129,9 @@ public class Virologus implements Leptetheto{
                 rakenve.remove(rakenve.get(i));
             }
         }
-        for(int i = 0; i < felszereles.size();i++){
-            felszereles.get(i).felszerelesHatas(this);
-        }
+        /*for(int i = 0; i < felszereles.size();i++){
+            felszereles.get(i).felszerelesHatas(this); TODO: Sztem erre nincs szükség. Balint?
+        }*/
         for (int i = 0; i < rakenve.size(); i++) {
             rakenve.get(i).hatas(this);
         }

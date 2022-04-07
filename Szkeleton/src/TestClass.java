@@ -113,7 +113,7 @@ public class TestClass {
     public void VirMagaraAgenstKen(Agens a) {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        v.kenes(v, a);
+        v.kenes(v, v, a);
     }
 
     public void VirKenVirt(Agens a) {
@@ -122,7 +122,7 @@ public class TestClass {
         Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
         Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
         v2.getFelszereles().add(new Kesztyu());
-        v1.kenes(v2, a);
+        v1.kenes(v1, v2, a);
     }
 
     public void JatekVege() {
