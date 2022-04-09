@@ -16,6 +16,7 @@ public class Virologus implements Leptetheto{
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
     private String userName;
+    private boolean halott;
 
     //Getterek-setterek:
     public String getUserName() { return userName; }
@@ -187,5 +188,8 @@ public class Virologus implements Leptetheto{
      */
     public void megtolt_tarolo(Virologus v) {
         System.out.println("Virologus.megtolt_tarolo() -> Tarolo megtoltve.");
+    }
+    public void megol(Virologus v){
+
     }
 }

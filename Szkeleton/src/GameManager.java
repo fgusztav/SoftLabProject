@@ -3,10 +3,13 @@ import java.util.ArrayList;
 public class GameManager implements Leptetheto {
     private int kodok;
     private ArrayList<Virologus> virologusok;
+    // mindig a soros virológus van soron.
+    private int soros;
 
     public GameManager(int kodokszama) {
         this.kodok = kodokszama;
         this.virologusok  = new ArrayList<>();
+        soros = 0;
     }
 
     /**
@@ -18,6 +21,11 @@ public class GameManager implements Leptetheto {
             if (getScore(virologusok.get(i)) == 4)
                 endGame();
         }
+        // a soron kovetkezo virologus lep.
+        if(virologusok.size()-1 > soros){
+
+        }
+
     }
 
     /**
