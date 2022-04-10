@@ -1,5 +1,8 @@
 public abstract class Felszereles {
     private int lejarat;
+    private Virologus vir;
+
+
 
     public Felszereles() {
     }
@@ -18,4 +21,6 @@ public abstract class Felszereles {
      */
     public abstract void felszerelesHatas(Virologus forras, Virologus cel, Agens a);
 
+    public void setVirologus( Virologus virologus) { this.vir = vir; }
+    public Virologus getVirologus() { return vir; }
 }
