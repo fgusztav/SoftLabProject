@@ -27,16 +27,6 @@ public abstract class Agens implements Leptetheto, Cloneable {
         virologus = v;
     }
 
-    @Override
-    protected Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     /**
      * Körönként csökkenti az Ágens objektum időtartamát.
      */

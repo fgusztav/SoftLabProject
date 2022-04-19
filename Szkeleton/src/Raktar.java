@@ -1,16 +1,8 @@
 public class Raktar extends Mezo {
-    private Anyag tarolo;
-    private boolean ures;
 
-    public Anyag getTarolo() {return tarolo;}
-    public void setTarolo(Anyag tarolo) {this.tarolo = tarolo;}
-
-    public boolean getUres() {return ures;}
-    public void setUres(boolean ures) {this.ures = ures;}
-
-    public Raktar (Anyag a, boolean ures){
-        tarolo = a;
-        this.ures = ures;
+    //TODO: Raktárba  ha belép egy Medve, akkor elpusztítja az osszes anyagot (feladat leiras szerint csak a raktarban)
+    public Raktar (Anyag a){
+        setTarolo(a);
     }
 
     /**

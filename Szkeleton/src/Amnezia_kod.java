@@ -4,6 +4,11 @@ public class Amnezia_kod extends Kod{
         setAr(new Anyag(10, 10));
     }
 
+    public Amnezia_kod() {
+        setV(null);
+        setAr(new Anyag(10, 10));
+    }
+
     /**
      * Ezzel a metódussal hozzuk létre az amnézia ágenst.
      */

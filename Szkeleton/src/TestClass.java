@@ -6,12 +6,13 @@ public class TestClass {
         Ures u2 = new Ures();
         Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
         v1.mozgas(u2);
+
     }
 
     public void AnyagfelvetelRaktarbol() {
         Ures u = new Ures();
         Virologus v2 = new Virologus(u, new Anyag(0, 0), 10);
-        Raktar r = new Raktar(new Anyag(0, 0), false);
+        Raktar r = new Raktar(new Anyag(0, 0));
         v2.mozgas(r);
         v2.anyag_felvesz();
     }
@@ -113,7 +114,7 @@ public class TestClass {
     public void VirMagaraAgenstKen(Agens a) {
         Ures u = new Ures();
         Virologus v = new Virologus(u, new Anyag(0, 0), 10);
-        v.kenes(v, v, a);
+        v.kenes(v, a);
     }
 
     public void VirKenVirt(Agens a) {
@@ -122,7 +123,7 @@ public class TestClass {
         Virologus v1 = new Virologus(u1, new Anyag(0, 0), 10);
         Virologus v2 = new Virologus(u2, new Anyag(0, 0), 10);
         v2.getFelszereles().add(new Kesztyu());
-        v1.kenes(v1, v2, a);
+        v1.kenes(v2, a);
     }
 
     public void JatekVege() {

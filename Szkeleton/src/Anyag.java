@@ -22,4 +22,14 @@ public class Anyag {
     public void setNukleotid(int nukleotid) {
         this.nukleotid = nukleotid;
     }
+
+    public void increase(Anyag a) {
+        nukleotid += a.getNukleotid();
+        aminosav += a.getAminosav();
+    }
+
+    public void decrease(Anyag a) {
+        nukleotid -= a.getNukleotid();
+        aminosav -= a.getAminosav();
+    }
 }

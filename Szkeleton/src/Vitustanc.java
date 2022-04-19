@@ -21,7 +21,7 @@ public class Vitustanc extends Agens{
      * @param v A vítustáncra kényszerített virológus.
      */
     public void hatas (Virologus v) {
-        List<Mezo> mezok = v.getMezo().getMezok();
+        List<Mezo> mezok = v.getMezo().getSzomszedok();
         int rnd;
         if(mezok.size() > 0){
             rnd = new Random().nextInt(mezok.size());

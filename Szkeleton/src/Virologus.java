@@ -10,13 +10,14 @@ import java.util.List;
 public class Virologus implements Leptetheto{
     private Mezo mezo;
     private Anyag tarolo;
-    private int maxAnyag;
+    private int maxAnyag = 40;
     private List<Kod> ismert_hatasok = new ArrayList<>();
     private List<Agens> rakenve = new ArrayList<>();
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
     private String userName;
     private boolean halott;
+    private boolean vedett;
 
     //Getterek-setterek:
     public String getUserName() { return userName; }
@@ -55,7 +56,7 @@ public class Virologus implements Leptetheto{
      * @param cel Virologus akit kennek.
      * @param a Ágens, amivel kennek.
      */
-    public void kenes(Virologus forras, Virologus cel, Agens a) {
+    public void kenes(Virologus cel, Agens a) {
         //System.out.println("Virologus.kenes() -> Kenes.");
         agens.remove(a);
         if (cel != this) {
@@ -64,7 +65,7 @@ public class Virologus implements Leptetheto{
                 cel.getFelszereles().get(i).felszerelesHatas(this, cel, a);
             }
         }
-
+        //TODO: Balinttal folytatni kenes, megkenve, felszerelesHatas() stb. vel kapcsolatos fv.eket
         if (a != null) {
             cel.megkenve(a);
         }
@@ -72,13 +73,13 @@ public class Virologus implements Leptetheto{
 
     /**
      * Ha az adott virológust megkenik, akkor ez a függvény hívodik meg, és az adott ágens bekerül a "rakenve" listájába.
-     * @param a1 Az ágens, amivel kenték a virológust.
+     * @param a Az ágens, amivel kenték a virológust.
      */
-    public void megkenve(Agens a1) {
-        Agens a2 = (Agens) a1.clone();
-        rakenve.add(a2);
+    public void megkenve(Agens a) {
 
-        a2.hatas(this);
+        rakenve.add(a);
+
+        a.hatas(this);
         //System.out.println("Virologus.megkenve() ->A kent hatasa hozzaadva.");
     }
 
@@ -106,6 +107,8 @@ public class Virologus implements Leptetheto{
      */
     public void felszereles_leadas(Felszereles f) {
         //System.out.println("Virologus.felszereles_leadas() -> Felszereles leadva.");
+        felszereles.remove(f);
+        mezo.getFelszerelesek().add(f);
     }
 
     /**
@@ -147,12 +150,15 @@ public class Virologus implements Leptetheto{
     }
 
     /**
-     * Felvesz anyagot a raktárból (amennyit tud).
+     * Felvesz anyagot a mezőről (amennyit tud)
+     * Minden lépéskor meghívódik
      */
     public void anyag_felvesz() {
         System.out.println("Virologus.anyag_felvesz() -> Anyag felveve");
         //((Raktar)mezo).getTarolo();
         //nem kellett mert nem hasznaltuk meg Szkeletonban
+
+        getTarolo().increase(getMezo().getTarolo());
     }
 
     /**
@@ -187,6 +193,7 @@ public class Virologus implements Leptetheto{
      * @param v Virológus, aki megkapja az anyagot.
      */
     public void megtolt_tarolo(Virologus v) {
+        //TODO: Kell e ilyen ha van anyag_felvesz()
         System.out.println("Virologus.megtolt_tarolo() -> Tarolo megtoltve.");
     }
     public void megol(Virologus v){

@@ -23,6 +23,14 @@ public class Benitottsag extends Agens {
     public void hatas (Virologus v) {
         //Virológus körének vége
         //System.out.println("Benitottsag.hatas() -> Benitottsag hatasa.");
+        //Felszerelést leadó ciklus:
+        for (int i = 0; i < v.getFelszereles().size(); i++) {
+            Felszereles f = v.getFelszereles().get(i);
+            v.getMezo().getFelszerelesek().add(f);
+            v.getFelszereles().remove(f);
+        }
 
+        v.getMezo().getTarolo().increase(v.getTarolo());
+        v.setTarolo(new Anyag(0,0));
     }
 }

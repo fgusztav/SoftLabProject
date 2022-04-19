@@ -2,15 +2,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Mezo {
+    private List<Mezo> szomszedok;
+    private List<Felszereles> felszerelesek;
+    private Anyag tarolo;
 
-    private List<Mezo> mezok;
     public Mezo(){
-        mezok = new ArrayList<Mezo>();
+        szomszedok = new ArrayList<Mezo>();
+        felszerelesek = new ArrayList<Felszereles>();
+        tarolo = new Anyag(0,0);
     }
 
-    public List<Mezo> getMezok() {
+    public List<Mezo> getSzomszedok() {
         System.out.println("Mezok lekerdezese.");
-        return mezok;
+        return szomszedok;
+    }
+
+    public List<Felszereles> getFelszerelesek() {
+        return felszerelesek;
+    }
+
+    public void setFelszerelesek(List<Felszereles> felszerelesek) {
+        this.felszerelesek = felszerelesek;
+    }
+
+    public Anyag getTarolo() {
+        return tarolo;
+    }
+
+    public void setTarolo(Anyag tarolo) {
+        this.tarolo = tarolo;
     }
 
     /**
@@ -26,6 +46,6 @@ public abstract class Mezo {
     public abstract void eltavolit(Virologus vir);
 
     public void addMezo(Mezo mezo){
-        mezok.add(mezo);
+        szomszedok.add(mezo);
     }
 }

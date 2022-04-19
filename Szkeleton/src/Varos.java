@@ -1,14 +1,14 @@
 public class Varos extends Mezo {
-    private Felszereles felszereles;
     private boolean ures;
 
     public Varos(Felszereles felszereles, boolean ures) {
-        this.felszereles = felszereles;
+        getFelszerelesek().add(felszereles);
         this.ures = ures;
     }
-
-    public Felszereles getFelszereles() {return felszereles;}
-    public void setFelszereles(Felszereles tarolo) {felszereles = tarolo;}
+    public Varos(Felszereles felszereles) {
+        getFelszerelesek().add(felszereles);
+        this.ures = false;
+    }
 
     public boolean getUres() {return ures;}
     public void setUres(boolean ures) {this.ures = ures;}
