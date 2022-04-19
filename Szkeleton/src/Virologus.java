@@ -10,13 +10,13 @@ import java.util.List;
 public class Virologus implements Leptetheto{
     private Mezo mezo;
     private Anyag tarolo;
-    private int maxAnyag = 40;
+    private int maxAnyag = 20; //Külön-külön limit a két anyagtípusra
     private List<Kod> ismert_hatasok = new ArrayList<>();
     private List<Agens> rakenve = new ArrayList<>();
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
     private String userName;
-    private boolean halott;
+    private boolean halott = false;
     private boolean vedett;
 
     //Getterek-setterek:
@@ -38,6 +38,8 @@ public class Virologus implements Leptetheto{
     public List<Kod> getIsmert_hatasok() { return ismert_hatasok; }
     public void setIsmert_hatasok(List<Kod> ismert_hatasok) { this.ismert_hatasok = ismert_hatasok; }
 
+    public boolean isHalott() {return halott;}
+    public void setHalott(boolean halott) {this.halott = halott;}
 
     /**
      * Virológus osztály konstruktora.
@@ -154,11 +156,16 @@ public class Virologus implements Leptetheto{
      * Minden lépéskor meghívódik
      */
     public void anyag_felvesz() {
+        //TODO: Zsak tarhelyenek elerese hogyan? Zsakhatas megnoveli a virolguset (maxAnyagat) tehat nem is kell a zsakba tarolo?
         System.out.println("Virologus.anyag_felvesz() -> Anyag felveve");
         //((Raktar)mezo).getTarolo();
         //nem kellett mert nem hasznaltuk meg Szkeletonban
-
-        getTarolo().increase(getMezo().getTarolo());
+        if (getTarolo().getAminosav() <= maxAnyag || getTarolo().getNukleotid() <= maxAnyag) {//TODO: ezt a szamolast ellenorizni papiron Xd
+            Anyag kulonbseg = new Anyag(maxAnyag-getTarolo().getNukleotid()-getMezo().getTarolo().getNukleotid(),
+                    maxAnyag-getTarolo().getAminosav()-getMezo().getTarolo().getAminosav());
+            getTarolo().increase(getMezo().getTarolo());
+            getTarolo().increase(kulonbseg);
+        }
     }
 
     /**
@@ -196,7 +203,13 @@ public class Virologus implements Leptetheto{
         //TODO: Kell e ilyen ha van anyag_felvesz()
         System.out.println("Virologus.megtolt_tarolo() -> Tarolo megtoltve.");
     }
-    public void megol(Virologus v){
 
+    /**
+     * Átállítja halottra az áldozat virológust.
+     * @param v
+     */
+    public void megol(Virologus v){
+        v.setHalott(true);
+        //TODO: GameManager feladatai ezzel kapcsolatban: Elmenti az áldozat virológus pontszámát (játék végére), majd törli a játékosok listájából
     }
 }
