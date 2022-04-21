@@ -24,7 +24,11 @@ public class Vitustanc extends Agens{
         List<Mezo> mezok = v.getMezo().getSzomszedok();
         int rnd;
         if(mezok.size() > 0){
+
             rnd = new Random().nextInt(mezok.size());
+            if(GameManager.rand == false){
+                rnd = 0;
+            }
             Mezo lep = mezok.get(rnd);
             v.mozgas(lep);
         }
