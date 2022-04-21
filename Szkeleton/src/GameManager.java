@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 
 public class GameManager implements Leptetheto {
+    /**
+     * Csak tesztelés céljából:
+     */
+    public static boolean rand = false;
+    public static boolean kopeny_elfogad = false;
+
+
     private int kodok;
     private ArrayList<Virologus> virologusok;
     // mindig a soros virológus van soron.

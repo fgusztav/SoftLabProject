@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.AtomicLongArray;
 
-public abstract class Agens implements Leptetheto, Cloneable {
+public abstract class Agens implements Leptetheto {
     private int idotartam;
     private boolean kenve;
     private Virologus virologus;
@@ -20,7 +20,9 @@ public abstract class Agens implements Leptetheto, Cloneable {
         this.virologus = virologus;
     }
 
-    public Agens () {}
+    public Agens() {
+        kenve = false;
+    }
 
     public Agens(Virologus v){
         kenve = false;
