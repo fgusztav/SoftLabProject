@@ -5,25 +5,21 @@ public abstract class Mezo {
     private List<Mezo> szomszedok;
     private List<Felszereles> felszerelesek;
     private Anyag tarolo;
+    private List<Virologus> virologusok;
 
-    private List<Mezo> mezok;
     public Mezo(){
         szomszedok = new ArrayList<Mezo>();
         felszerelesek = new ArrayList<Felszereles>();
+        virologusok = new ArrayList<Virologus>();
         tarolo = new Anyag(0,0);
     }
 
     public List<Mezo> getSzomszedok() {
-        System.out.println("Mezok lekerdezese.");
         return szomszedok;
     }
 
     public List<Felszereles> getFelszerelesek() {
         return felszerelesek;
-    }
-
-    public void setFelszerelesek(List<Felszereles> felszerelesek) {
-        this.felszerelesek = felszerelesek;
     }
 
     public Anyag getTarolo() {
@@ -34,19 +30,29 @@ public abstract class Mezo {
         this.tarolo = tarolo;
     }
 
-    /**
-     * Elfogadja a megadott virologust a mezőre
-     * @param vir Ezt a virológust fogadja el az adott mezőre
-     */
-    public void elfogad (Virologus vir) {
-
+    public List<Virologus> getVirologusok() {
+        return virologusok;
     }
 
     /**
-     * Eltávolitja az adott virologust a mezőről
+     * Elfogadja a megadott virologust a mezőre.
+     * @param vir Ezt a virológust fogadja el az adott mezőre
+     */
+    public void elfogad (Virologus vir) {
+        //ellenőrizzük, hogy valóban szomszédos mezőből jön-e:
+        if (szomszedok.contains(vir.getMezo())) {
+            vir.setMezo(this);
+            getVirologusok().add(vir);
+        }
+    }
+
+    /**
+     * Eltávolitja az adott virologust a mezőről.
      * @param vir Ezt a virológust távolítja el az adott mezőről.
      */
-    public abstract void eltavolit(Virologus vir);
+    public void eltavolit(Virologus vir) {
+        getVirologusok().remove(vir);
+    };
 
     public void addMezo(Mezo mezo){
         szomszedok.add(mezo);
