@@ -6,6 +6,7 @@ public abstract class Mezo {
     private List<Felszereles> felszerelesek;
     private Anyag tarolo;
 
+    private List<Mezo> mezok;
     public Mezo(){
         szomszedok = new ArrayList<Mezo>();
         felszerelesek = new ArrayList<Felszereles>();
