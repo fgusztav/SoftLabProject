@@ -38,7 +38,9 @@ public abstract class Mezo {
      * Elfogadja a megadott virologust a mezőre
      * @param vir Ezt a virológust fogadja el az adott mezőre
      */
-    public abstract void elfogad (Virologus vir);
+    public void elfogad (Virologus vir) {
+
+    }
 
     /**
      * Eltávolitja az adott virologust a mezőről

@@ -10,7 +10,7 @@ public class Medvetanc extends Agens{
 
     @Override
     public void hatas(Virologus v) {
-
+        if (getVirologus() != null) getVirologus().getMezo().anyagElpusztit();
     }
 }
 

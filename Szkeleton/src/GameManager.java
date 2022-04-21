@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class GameManager implements Leptetheto {
     /**
-     * Csak tesztelés céljából:
+     * Csak tesztelés céljából (determinisztukus teszteléshez):
      */
-    public static boolean rand = false;
+    public static boolean rand = true;
     public static boolean kopeny_elfogad = false;
 
 
