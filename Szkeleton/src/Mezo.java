@@ -48,4 +48,9 @@ public abstract class Mezo {
     public void addMezo(Mezo mezo){
         szomszedok.add(mezo);
     }
+
+    /**
+     * Medvetanc agens hatása hívja meg, de csak raktárban nem üres, ahol elpusztítja az anyagot.
+     */
+    public void anyagElpusztit() {}
 }

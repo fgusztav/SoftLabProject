@@ -11,6 +11,7 @@ public class Raktar extends Mezo {
      * @param vir Ezt a virol�gust fogadja el az adott mez�re
      */
     public void elfogad(Virologus vir) {
+        vir.
         System.out.println("Raktar.elfogad() -> Virologus belepett a raktarba.");
     }
 
@@ -21,5 +22,10 @@ public class Raktar extends Mezo {
      */
     public void eltavolit(Virologus vir) {
         System.out.println("Raktar.eltavolit() -> Virologus kilepett a raktarbol.");
+    }
+
+    @Override
+    public void anyagElpusztit() {
+        setTarolo(new Anyag(0,0));
     }
 }
