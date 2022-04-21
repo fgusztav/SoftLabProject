@@ -1,5 +1,6 @@
 public class Labor extends Mezo {
     private Kod kod;
+    public Labor(){};
 
     public Labor(Kod kod) {
         this.kod = kod;

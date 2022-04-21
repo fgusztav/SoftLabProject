@@ -1,6 +1,7 @@
 public class Varos extends Mezo {
     private boolean ures;
 
+    public Varos(){}; //leironyelvhez
     public Varos(Felszereles felszereles, boolean ures) {
         getFelszerelesek().add(felszereles);
         this.ures = ures;

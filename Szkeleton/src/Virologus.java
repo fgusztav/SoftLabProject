@@ -47,6 +47,7 @@ public class Virologus implements Leptetheto{
      * @param tarolo A virológus által eltárolt anyag (nukleotid és aminosav).
      * @param maxAnyag A virológus max anyag tárolási kapacitása (minden fajta anyagból külön-külön ugyanannyi) zsák kapacitását nem számolva.
      */
+
     public Virologus(Mezo mezo, Anyag tarolo, int maxAnyag) {
         this.mezo = mezo;
         this.tarolo = tarolo;

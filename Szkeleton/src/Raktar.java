@@ -1,5 +1,5 @@
 public class Raktar extends Mezo {
-
+public Raktar(){};
     //TODO: Raktárba  ha belép egy Medve, akkor elpusztítja az osszes anyagot (feladat leiras szerint csak a raktarban)
     public Raktar (Anyag a){
         setTarolo(a);

@@ -53,7 +53,8 @@ public class GameManager implements Leptetheto {
     /**
      * A játék végén hivódik meg.
      */
-    public void endGame() { //TODO: Dokumetntumban beleirni modositasokban (kimeneti nyelv!), hogy a játék végén kiírja a konzolra a játékosok pontszámát.
+    public void endGame() { //TODO: Dokumetntumban beleirni modositasokban (kimeneti nyelv!), hogy a játék végén kiírja a konzolra a
+        // játékosok pontszámát.
         //System.out.println("GameManager.endGame() -> Game over!");
         for (int i = 0; i < virologusok.size(); i++) {
             System.out.println(virologusok.get(i).getUserName()+" "+getScore(virologusok.get(i)));
@@ -63,8 +64,10 @@ public class GameManager implements Leptetheto {
     /**
      * új játékost ad hozzá a játékhoz
      */
-    public void addPlayer() {
-        System.out.println("GameManager.addPlayer() -> Uj jatekos hozzaadas.");
+    public void addPlayer(Virologus v) {
+       // System.out.println("GameManager.addPlayer() -> Uj jatekos hozzaadas.");
+        virologusok.add(v);
+
     }
 
     /**

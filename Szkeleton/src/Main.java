@@ -2,7 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        TestClass test = new TestClass();
+
+        String leironyelv = new String(); //csak példaként az első parancs
+        String parameter = new String(); // masodik parancs
+        Leironyelv banan = new Leironyelv();
+
+        switch (leironyelv) {
+            case "create":
+                banan.create(parameter);
+
+
+
+
+        }
+      /*  TestClass test = new TestClass();
 
         System.out.println("\n1. Jatek kezdes");
         System.out.println("\n2. Jatekos hozzaadsa");
@@ -16,7 +29,7 @@ public class Main {
                     /**
                      *Játék kezdes
                      */
-                    System.out.println("\nJatek kezdes.");
+          /*          System.out.println("\nJatek kezdes.");
                     test.JatekKezdes();
                     Jatek(in, test);
                     test.JatekVege();
@@ -24,7 +37,7 @@ public class Main {
                 case 2:
                     System.out.println("\nUj jatekost adott hozza!");
             }
-        }
+        }*/
     }
 
     /**

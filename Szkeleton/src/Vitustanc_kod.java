@@ -8,7 +8,7 @@ public class Vitustanc_kod extends Kod {
      * Ezzel a metódussal hozzuk létre az vítustánc ágenst.
      */
     public Vitustanc letrehoz (){
-        System.out.println("Vitustanc_kod.letrehoz() ->Letrehoz vitustanc.");
+        //System.out.println("Vitustanc_kod.letrehoz() ->Letrehoz vitustanc.");
         return new Vitustanc(this.getV());
     }
 }

@@ -133,7 +133,7 @@ public class TestClass {
 
     public void JatekKezdes() {
         GameManager gm = new GameManager(4);
-        gm.addPlayer();
+       // gm.addPlayer();
         gm.startGame();
     }
 }

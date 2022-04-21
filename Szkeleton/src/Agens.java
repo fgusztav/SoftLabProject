@@ -5,8 +5,6 @@ public abstract class Agens implements Leptetheto {
     private boolean kenve;
     private Virologus virologus;
 
-
-
     public int getIdotartam() {return idotartam; }
     public void setIdotartam(int idotartam) {this.idotartam = idotartam; }
 
