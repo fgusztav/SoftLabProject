@@ -1,5 +1,6 @@
 public class Leironyelv {
     //minden parancsra egy fv.
+
     public void create(String parameter){
         boolean mezo = false;
         if(!mezo){
@@ -96,6 +97,20 @@ public class Leironyelv {
     }
 
     public void smear_virus (String parameter){
+        String array [] = parameter.split(" ");
+        Virologus v1, v2;
+        for (int i = 0; i < Main.gm.getVirologusok().size(); i++){
+            Virologus v = Main.gm.getVirologusok().get(i);
+            String name = v.getUserName();
+            if (array[0].equals(name)){
+                v1 = v;
+            }
+            if (array[1].equals(name)){
+                v2 = v;
+            }
+        }
+        //TODO: GetType
+
 
     }
 
@@ -103,8 +118,25 @@ public class Leironyelv {
 
     }
 
-    public void make_agent (String parameter){
-
+    public void make_agent (String parameter) {
+        String array [] = parameter.split(" ");
+        for (int i = 0; i < Main.gm.getVirologusok().size(); i++){
+            Virologus v = Main.gm.getVirologusok().get(i);
+            String name = v.getUserName();
+            if (array[0].equals(name)){
+                //TODO: GetType
+                switch(array[1]){
+                    case "amnezia":
+                        v.agens_letrehoz(new Amnezia_kod());
+                    case "benitottsag":
+                        v.agens_letrehoz(new Benitottsag_kod(v));
+                    case "vedettseg":
+                        v.agens_letrehoz(new Vedettseg_kod(v));
+                    case "vitustanc":
+                        v.agens_letrehoz(new Vitustanc_kod(v));
+                }
+            }
+        }
     }
 
     public void random (String parameter){

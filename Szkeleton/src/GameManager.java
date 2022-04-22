@@ -10,6 +10,13 @@ public class GameManager implements Leptetheto {
 
     private int kodok;
     private ArrayList<Virologus> virologusok;
+
+    public ArrayList<Virologus> getVirologusok() { return virologusok; }
+
+    public void setVirologusok(ArrayList<Virologus> virologusok) {
+        this.virologusok = virologusok;
+    }
+
     private ArrayList<Mezo> mezok;
     // mindig a soros virológus van soron.
     private int soros;
