@@ -7,22 +7,24 @@ public class Leironyelv {
             switch (parameter){
                 case "varos":
                     Varos v = new Varos();
+                    mezo = true;
                 case "ures":
                     Ures u = new Ures();
+                    mezo = true;
                 case "labor":
                     Labor l = new Labor();
+                    mezo = true;
                 case "raktar":
                     Raktar r = new Raktar();
+                    mezo = true;
                 case "ovohely":
                     Ovohely ov = new Ovohely();
-                default:
-                    System.out.println("Invalid parameter");
+                    mezo = true;
             }
         }
         else{
-            //csak példanak csinaltam h én igy értelmeztem amit irtal, vagyis a createt igy oldanam meg
-            //még talan a leiro nyelvnek csinalnek egy mezok listat, meg talan virologus
-            //Virologus parameter = new Virologus(mezolista, Anyag tarolo = new Anyag(0,0), maxanyag = 50);
+            Virologus v = new Virologus(Main.gm.getMezok().get(0), new Anyag(0, 0), 40);
+            v.setUserName(parameter);
         }
     }
 
@@ -53,11 +55,35 @@ public class Leironyelv {
     }
 
     public void info (String parameter){
-
+        String array [] = parameter.split(" ");
+        if (array[0].equals("Virologus")){
+            Virologus v;
+            for (Virologus vir : Main.gm.getVirologusok()){
+                if (array[1].equals(vir.getUserName())){
+                    vir.toString();
+                }
+            }
+        }
+        else if (array[0].equals("Mezo")) {
+            //TODO:Kiiratas
+        }
+        else {
+            System.out.println("Invalid parameter");
+        }
     }
 
     public void put (String parameter){
+        String array [] = parameter.split(" ");
+        String v = array[0];
 
+        int azon = Integer.parseInt(array[1]);
+        Mezo m = Main.gm.getMezok().get(azon);
+
+        for (Virologus vir : Main.gm.getVirologusok()){
+            if (v.equals(vir.getUserName())){
+                vir.setMezo(m);
+            }
+        }
     }
 
     public void connect (String parameter){
@@ -65,7 +91,18 @@ public class Leironyelv {
     }
 
     public void list (String parameter){
-
+        switch(parameter){
+            case "virologus":
+                for (Virologus vir : Main.gm.getVirologusok()){
+                    System.out.println(vir.getUserName());
+                }
+            case "mezok:":
+                for (Mezo m : Main.gm.getMezok()){
+                    int i = 1;
+                    System.out.println(i + " " + m.toString());
+                    i++;
+                }
+        }
     }
 
     public void load (String parameter){
@@ -110,8 +147,6 @@ public class Leironyelv {
             }
         }
         //TODO: GetType
-
-
     }
 
     public void kill (String parameter){

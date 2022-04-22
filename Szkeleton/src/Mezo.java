@@ -62,4 +62,14 @@ public abstract class Mezo {
      * Medvetanc agens hatása hívja meg, de csak raktárban nem üres, ahol elpusztítja az anyagot.
      */
     public void anyagElpusztit() {}
+
+    @Override
+    public String toString() {
+        return "Mezo{" +
+                "szomszedok=" + szomszedok +
+                ", felszerelesek=" + felszerelesek +
+                ", tarolo=" + tarolo +
+                ", virologusok=" + virologusok +
+                '}';
+    }
 }

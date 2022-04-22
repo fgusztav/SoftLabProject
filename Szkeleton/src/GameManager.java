@@ -6,25 +6,35 @@ public class GameManager implements Leptetheto {
      */
     public static boolean rand = true;
     public static boolean kopeny_elfogad = false;
-
-
     private int kodok;
+
     private ArrayList<Virologus> virologusok;
 
     public ArrayList<Virologus> getVirologusok() { return virologusok; }
-
     public void setVirologusok(ArrayList<Virologus> virologusok) {
         this.virologusok = virologusok;
     }
 
     private ArrayList<Mezo> mezok;
+    public ArrayList<Mezo> getMezok() {
+        return mezok;
+    }
+    public void setMezok(ArrayList<Mezo> mezok) {
+        this.mezok = mezok;
+    }
+
     // mindig a soros virológus van soron.
     private int soros;
 
     public GameManager(int kodokszama) {
         this.kodok = kodokszama;
         this.virologusok  = new ArrayList<>();
+        this.mezok = new ArrayList<>();
         soros = 0;
+
+        virologusok.add(new Virologus(new Ures(), new Anyag(0, 0), 40));
+        virologusok.get(0).setUserName("Guszti");
+        mezok.add(new Ures());
     }
 
     /**

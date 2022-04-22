@@ -8,6 +8,7 @@ public class Main {
         String parameter = new String(); // masodik parancs
         Leironyelv banan = new Leironyelv();
 
+        banan.list("mezok");
 
         switch (leironyelv) {
             case "create":
