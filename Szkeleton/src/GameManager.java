@@ -32,9 +32,11 @@ public class GameManager implements Leptetheto {
         this.mezok = new ArrayList<>();
         soros = 0;
 
+        /**
         virologusok.add(new Virologus(new Ures(), new Anyag(0, 0), 40));
         virologusok.get(0).setUserName("Guszti");
         mezok.add(new Ures());
+         */
     }
 
     /**
