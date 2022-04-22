@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         String leironyelv = new String(); //csak példaként az első parancs
         String parameter = new String(); // masodik parancs
         Leironyelv banan = new Leironyelv();

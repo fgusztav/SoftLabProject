@@ -66,7 +66,7 @@ public class GameManager implements Leptetheto {
      */
     public void addPlayer(String name) {
         System.out.println("GameManager.addPlayer() -> Uj jatekos hozzaadas.");
-        Virologus vir = new Virologus(mezok.get(0),);
+        Virologus vir = new Virologus(mezok.get(0), new Anyag(0,0), 20);
     }
 
     /**
@@ -74,7 +74,6 @@ public class GameManager implements Leptetheto {
      */
     public void startGame() {
         palya_generalas();
-
         System.out.println("GameManager.startGame() -> Jatek inditasa.");
     }
 }
