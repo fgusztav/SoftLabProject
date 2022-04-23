@@ -5,5 +5,5 @@ public class Balta extends Felszereles{
     }
 
     @Override
-    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) {} //Kubesz
+    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) {} //TODO:Kubesz
 }
