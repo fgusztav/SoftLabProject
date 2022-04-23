@@ -165,6 +165,9 @@ public class Leironyelv {
     }
 
     public void connect(String parameter) {
+        String array[] = parameter.split(" ");
+        Main.gm.getMezok().get(Integer.parseInt(array[0])).setSzomszedok( Main.gm.getMezok().get(Integer.parseInt(array[1])));
+        Main.gm.getMezok().get(Integer.parseInt(array[1])).setSzomszedok( Main.gm.getMezok().get(Integer.parseInt(array[2])));
 
     }
 

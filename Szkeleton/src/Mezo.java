@@ -17,6 +17,7 @@ public abstract class Mezo {
     public List<Mezo> getSzomszedok() {
         return szomszedok;
     }
+    public void setSzomszedok(Mezo szomszed){szomszedok.add(szomszed);}
 
     public List<Felszereles> getFelszerelesek() {
         return felszerelesek;
