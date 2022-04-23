@@ -318,17 +318,14 @@ public class Leironyelv {
             Virologus v = Main.gm.getVirologusok().get(i);
             String name = v.getUserName();
             if (array[0].equals(name)) {
-                //TODO: GetType
-                switch (array[1]) {
-                    case "amnezia":
-                        v.agens_letrehoz(new Amnezia_kod());
-                    case "benitottsag":
-                        v.agens_letrehoz(new Benitottsag_kod(v));
-                    case "vedettseg":
-                        v.agens_letrehoz(new Vedettseg_kod(v));
-                    case "vitustanc":
-                        v.agens_letrehoz(new Vitustanc_kod(v));
+                for (int j = 0; j < v.getIsmert_hatasok().size(); j++) {
+                    Kod temp_hatas = v.getIsmert_hatasok().get(j);
+                    if (array[1].equals(temp_hatas.toString().toLowerCase())) {
+                        v.agens_letrehoz(temp_hatas);
+                        return;
+                    }
                 }
+                System.out.println("A virológus nem ismeri a szükséges kódot");
             }
         }
     }

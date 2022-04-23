@@ -187,12 +187,13 @@ public class Virologus implements Leptetheto{
      * @param k Kód, amelyből ágenst szeretnénk lélrehozni.
      */
     public void agens_letrehoz(Kod k) {
-        //System.out.println("Virologus.agens_letrehoz() -> Agens letrehozva");
         Anyag ujTarolo = new Anyag(tarolo.getNukleotid()-k.getAr().getNukleotid(),tarolo.getAminosav()-k.getAr().getAminosav());
+
         if(check_ar(k)) {
             k.letrehoz();
             setTarolo(ujTarolo);
         }
+
     }
 
     /**
