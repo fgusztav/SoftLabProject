@@ -1,6 +1,8 @@
 public class Labor extends Mezo {
     private Kod kod;
-    public Labor(){};
+    private Medvetanc m;
+
+    public Labor() {}
 
     public Labor(Kod kod) {
         this.kod = kod;
@@ -14,8 +16,10 @@ public class Labor extends Mezo {
      *
      * @param vir Ezt a virológust fogadja el az adott mezőre
      */
+    @Override
     public void elfogad(Virologus vir) {
-        System.out.println("Labor.elfogad() -> Virolegus belepett a laborba.");
+        super.elfogad(vir);
+
     }
 
     /**
