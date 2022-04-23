@@ -21,6 +21,9 @@ public abstract class Mezo {
     public List<Felszereles> getFelszerelesek() {
         return felszerelesek;
     }
+    public void setFelszerelesek(Felszereles f) {
+        felszerelesek.add(f);
+    }
 
     public Anyag getTarolo() {
         return tarolo;
