@@ -1,5 +1,6 @@
 public class Kesztyu extends Felszereles {
     public Kesztyu() {
+        setAktiv(false);
         setLejarat(3);
     }
 

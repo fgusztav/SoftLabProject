@@ -48,11 +48,15 @@ public class GameManager implements Leptetheto {
             if (getScore(virologusok.get(i)) == 4)
                 endGame();
         }
-        // a soron kovetkezo virologus lep.
-        if(virologusok.size()-1 > soros){
+        // a soron kovetkezo virologus lep. Ha a virológusok lista végére értünk kezdjük elolrol.
 
+        virologusok.get(soros).lep();
+        if(virologusok.size()-1 == soros){
+            soros = 0;
         }
-
+        else {
+            soros++;
+        }
     }
 
     /**

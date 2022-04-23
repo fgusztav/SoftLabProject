@@ -2,6 +2,7 @@ public class Balta extends Felszereles{
 
     public Balta() {
         setLejarat(1);
+        setAktiv(true);
     }
 
     @Override

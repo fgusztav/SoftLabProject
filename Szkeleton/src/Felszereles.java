@@ -1,6 +1,7 @@
 public abstract class Felszereles {
     private int lejarat;
     private Virologus vir;
+    private boolean aktiv;
 
     public Felszereles() {
         vir = null;
@@ -22,4 +23,12 @@ public abstract class Felszereles {
 
     public void setVirologus( Virologus virologus) { this.vir = vir; }
     public Virologus getVirologus() { return vir; }
+
+    public boolean isAktiv() {
+        return aktiv;
+    }
+
+    public void setAktiv(boolean aktiv) {
+        this.aktiv = aktiv;
+    }
 }

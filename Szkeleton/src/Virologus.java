@@ -137,13 +137,11 @@ public class Virologus implements Leptetheto{
             }
         }
         /*for(int i = 0; i < felszereles.size();i++){
-            felszereles.get(i).felszerelesHatas(this);
-            TODO: Sztem erre nincs szükség. Balint? Szerintem van rá szükség vagyis megállapodás kérdése, ha egy virológus
-            nem léphet miután kent akkor meghivhatjuk minden virológusnak a köre elején a felszerelés hatásokat, mert pl ha kesztyűje van a virológusnak
-            akkor az a virológus akit megkentek, a saját körében visszakenheti a kenőre az ágenst. igy nem kell a kenéskor felszereléshatásokat hivni és nem kell
-            a kenéskor megvizsgálni, hogy a célvirológusnak van e kesztyűje hanem majd a kesztyű intézi a célvirológus körében a visszakenést.
-            Másik megoldás, hogy a kenésnél rákenjük a célvirológusra az ágenst és utána végighivjuk a felszereléseit, ebben az esetben se kell az a clone cucc nem?
-        }*/
+            if(getFelszereles().get(i).isAktiv()){
+                getFelszereles().get(i).felszerelesHatas();
+            }
+        }
+        */
         for (int i = 0; i < rakenve.size(); i++) {
             rakenve.get(i).hatas(this);
         }

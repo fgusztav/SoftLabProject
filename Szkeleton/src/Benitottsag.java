@@ -29,9 +29,11 @@ public class Benitottsag extends Agens {
             v.getMezo().getFelszerelesek().add(f);
             v.getFelszereles().remove(f);
         }
-
         v.getMezo().getTarolo().increase(v.getTarolo());
         v.setTarolo(new Anyag(0,0));
+
+        //TODO: Itt véget kéne vetni a virológus körének
+
     }
 
     @Override
