@@ -10,7 +10,8 @@ public class Vedettseg extends Agens {
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Vedettseg.lep() ->Védettség hatás léptetése.");
+        setIdotartam(getIdotartam()-1);
+        //System.out.println("Vedettseg.lep() ->Védettség hatás léptetése.");
     }
 
     /**
@@ -18,8 +19,12 @@ public class Vedettseg extends Agens {
      * @param v A vítustáncra kényszerített virológus.
      */
     public void hatas(Virologus v) {
-        v.getRakenve().clear();
-        System.out.println("Vedettseg.hatas() ->Vedettseg hatasa.");
+        for(int i = 0; i < v.getRakenve().size(); i++){
+            if(!v.getRakenve().get(i).getKenve()){
+                v.getRakenve().remove(v.getRakenve().get(i));
+            }
+        }
+
     }
 
     @Override
