@@ -16,4 +16,10 @@ public class Amnezia_kod extends Kod{
         //System.out.println("Amnezia_kod.letrehoz() -> Letrehoz amnezia.");
         return new Amnezia(getV());
     }
+
+    @Override
+    public String toString() {
+        return "Amnezia";
+    }
+
 }

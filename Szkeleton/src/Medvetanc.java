@@ -27,6 +27,11 @@ public class Medvetanc extends Agens{
 
         if (getVirologus() != null) getVirologus().getMezo().anyagElpusztit();
     }
+
+    @Override
+    public String toString() {
+        return "Medvetanc";
+    }
 }
 
 

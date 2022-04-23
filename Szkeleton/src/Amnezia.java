@@ -23,4 +23,9 @@ public class Amnezia extends Agens {
         v.getRakenve().remove(this);
         //System.out.println("Amnezia.hatas() -> Amnezia hatasa.");
     }
+
+    @Override
+    public String toString() {
+        return "Amnezia";
+    }
 }

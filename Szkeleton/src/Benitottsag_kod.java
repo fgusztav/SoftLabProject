@@ -11,4 +11,10 @@ public class Benitottsag_kod extends Kod{
         //System.out.println("Benitottsag_kod.letrehoz() ->Letrehoz benitottsag.");
         return new Benitottsag(getV());
     }
+
+    @Override
+    public String toString() {
+        return "Benitottsag";
+    }
+
 }

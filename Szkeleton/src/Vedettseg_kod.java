@@ -12,4 +12,10 @@ public class Vedettseg_kod extends  Kod {
         //System.out.println("Vedettseg_kod.letrehoz() ->Letrehoz vedettseg.");
         return new Vedettseg(this.getV());
     }
+
+    @Override
+    public String toString() {
+        return "Vedettseg";
+    }
+
 }
