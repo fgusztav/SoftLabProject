@@ -1,3 +1,5 @@
+import jdk.swing.interop.SwingInterOpUtils;
+
 public class Leironyelv {
     //minden parancsra egy fv.
 
@@ -38,7 +40,7 @@ public class Leironyelv {
                 break;
             case "help":
                 System.out.println(" Információ kérhetõ egy adott parancsról, vagy kilistázható az összes parancs.");
-                System.out.println("\nHelp <parancs_neve> - ahol a paraméter csak opcionális!");
+                System.out.println("\nHelp [parancs_neve] - ahol a paraméter csak opcionális!");
                 break;
             case "info":
                 System.out.println("Elsõ paraméterként megadhatunk egy típust a második paraméterként a megfelelõ objektum nevét, ezután a program kilistázza az objektum információit.");
@@ -126,7 +128,6 @@ public class Leironyelv {
                         "kod\n" +
                         "anyag\n" +
                         "medvetanc\n");
-                //TODO: itt volt egy tablazat hogy az objektum_neve mik lehetnek azt is rakjuk be valahogy?
                 break;
         }
     }
@@ -333,7 +334,17 @@ public class Leironyelv {
     }
 
     public void random(String parameter) {
-
+        switch (parameter) {
+            case "on":
+                GameManager.rand = true;
+                break;
+            case "off":
+                GameManager.rand = false;
+                break;
+            default:
+                invalid_param();
+                break;
+        }
     }
 
     public void clear(String parameter) {
@@ -408,6 +419,10 @@ public class Leironyelv {
 
 
         }
+    }
+
+    private void invalid_param() {
+        System.out.println("Invalid parameter given");
     }
 
 

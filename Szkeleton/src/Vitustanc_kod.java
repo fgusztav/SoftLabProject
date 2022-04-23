@@ -11,4 +11,10 @@ public class Vitustanc_kod extends Kod {
         //System.out.println("Vitustanc_kod.letrehoz() ->Letrehoz vitustanc.");
         return new Vitustanc(this.getV());
     }
+
+    @Override
+    public String toString() {
+        return "Vitustanc";
+    }
+
 }

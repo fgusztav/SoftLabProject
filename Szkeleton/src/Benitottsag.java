@@ -33,4 +33,9 @@ public class Benitottsag extends Agens {
         v.getMezo().getTarolo().increase(v.getTarolo());
         v.setTarolo(new Anyag(0,0));
     }
+
+    @Override
+    public String toString() {
+        return "Benitottsag";
+    }
 }

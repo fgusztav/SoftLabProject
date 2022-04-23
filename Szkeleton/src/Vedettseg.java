@@ -21,4 +21,9 @@ public class Vedettseg extends Agens {
         v.getRakenve().clear();
         System.out.println("Vedettseg.hatas() ->Vedettseg hatasa.");
     }
+
+    @Override
+    public String toString() {
+        return "Vedettseg";
+    }
 }

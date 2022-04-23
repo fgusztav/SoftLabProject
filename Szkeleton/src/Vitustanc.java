@@ -35,4 +35,9 @@ public class Vitustanc extends Agens{
 
         System.out.println("Vitustanc.hatas() ->Vitustanc hatasa.");
     }
+
+    @Override
+    public String toString() {
+        return "Vitustanc";
+    }
 }

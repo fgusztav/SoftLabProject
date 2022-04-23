@@ -5,8 +5,5 @@ public class Balta extends Felszereles{
     }
 
     @Override
-    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) { //TODO megol ishalott sethalott ezek mik is?
-        forras.getFelszereles().remove(this);
-        cel.setHalott(true);
-    } //Kubesz
+    public void felszerelesHatas(Virologus forras, Virologus cel, Agens a) {} //TODO:Kubesz
 }
