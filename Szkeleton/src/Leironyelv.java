@@ -328,7 +328,25 @@ public class Leironyelv {
     }
 
     public void kill(String parameter) {
+        String array[] = parameter.split(" ");
 
+        Virologus v1 = null, v2 = null;
+        for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
+            Virologus v = Main.gm.getVirologusok().get(i);
+            String name = v.getUserName();
+            if (array[0].equals(name)) {
+                v1 = v;
+            }
+            if (array[1].equals(name)) {
+                v2 = v;
+            }
+        }
+        if(v1.getMezo() == v2.getMezo()){
+            v2.setHalott(true);
+        }
+        else{
+            System.out.print("Nem egy mezõn állnak!");
+        }
     }
 
     public void make_agent(String parameter) {
@@ -364,7 +382,9 @@ public class Leironyelv {
     }
 
     public void clear(String parameter) {
-
+        Main.gm.getMezok().get(Integer.parseInt(parameter)).getFelszerelesek().clear();
+        Main.gm.getMezok().get(Integer.parseInt(parameter)).setTarolo(new Anyag (0, 0));
+       //TODO: kod? esetleg azt is atrakhatnank a sima Mezo tipusba, virologusokat is törölni kell?
 
     }
 
