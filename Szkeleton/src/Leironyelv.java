@@ -195,6 +195,18 @@ public class Leironyelv {
     }
 
     public void move(String parameter) {
+        String array[] = parameter.split(" ");
+        Virologus vir = null;
+        for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
+            Virologus v = Main.gm.getVirologusok().get(i);
+            String name = v.getUserName();
+            if (array[0].equals(name)) {
+                vir = v;
+            }
+        }
+
+        // TODO:if(benult)
+        vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1])));
 
     }
 
@@ -204,7 +216,7 @@ public class Leironyelv {
 
     public void give(String parameter) {
         String array[] = parameter.split(" ");
-        Virologus vir;
+        Virologus vir = null;
         //TODO: bocsesz elefeljetttem hogy kell meg keresni a virologust akinvel egyezik a neve, de remélem igy:
         for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
             Virologus v = Main.gm.getVirologusok().get(i);
@@ -214,25 +226,25 @@ public class Leironyelv {
             }
         }
         boolean kod = false; //mivel az agens és kod nveei ugyan azok a segéd fuggvényél ezzel nézi meg hogy melyik kell adni neki
-        ///TODO: Ha az egyik casenél már használom a vir-t a többinél azt irja nincs inicializálva (szedjétek ki a kommenteteket és latjatok)
+
         switch (array[1]) {
 
             case "nukleotid":
-                //vir.setTarolo(new Anyag(Integer.parseInt(array[2]), vir.getTarolo().getAminosav()));
+                vir.setTarolo(new Anyag(Integer.parseInt(array[2]), vir.getTarolo().getAminosav()));
                 break;
             case "aminosav":
-                // vir.setTarolo(new Anyag(vir.getTarolo().getNukleotid(), Integer.parseInt(array[2])));
+                 vir.setTarolo(new Anyag(vir.getTarolo().getNukleotid(), Integer.parseInt(array[2])));
                 break;
             case "felszereles":
-                //give_seged_fel(array[2], vir); //segéd fg
+                give_seged_fel(array[2], vir); //segéd fg
                 break;
             case "agens":
-                //give_seged_agens(array[2], kod, vir); //seged fg
+                give_seged_agens(array[2], kod, vir); //seged fg
                 break;
             case "kod":
                 kod = true;
 
-                // give_seged_agens(array[2], kod, vir);
+                 give_seged_agens(array[2], kod, vir);
                 break;
 
         }
