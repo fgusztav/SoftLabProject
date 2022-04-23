@@ -1,7 +1,7 @@
 public class Amnezia extends Agens {
 
     public Amnezia(Virologus virologus){
-        setIdotartam(1);
+        setIdotartam(5);
         setKenve(false);
         setVirologus(virologus);
     }
@@ -9,8 +9,8 @@ public class Amnezia extends Agens {
     /**
      * Körönként csökkenti a hatás időtartamát.
      */
-    public void lep() { //TODO: Balint, ezt h? 1.: keneskor hatas meghivodik? ugy emlékszem, hogy a// 2. ha a setIdotartam 1,akkor meg Agenskent nem jar le?
-        //System.out.println("Amnezia.lep() ->Amnezia hatas leptetese.")
+    public void lep() { //TODO: Balint, ezt h? 1.: keneskor hatas meghivodik? ugy emlékszem, hogy a// 2. ha a setIdotartam 1,akkor meg Agenskent nem jar le? hát legyen az hogy a hatas dobja ki magát és nem kell, hogy a lejárata 1 legyen.
+        setIdotartam(getIdotartam()-1);
     }
 
     /**
@@ -20,6 +20,7 @@ public class Amnezia extends Agens {
      */
     public void hatas (Virologus v) {
         v.getIsmert_hatasok().clear();
+        v.getRakenve().remove(this);
         //System.out.println("Amnezia.hatas() -> Amnezia hatasa.");
     }
 }
