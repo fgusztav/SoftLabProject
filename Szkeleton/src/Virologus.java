@@ -213,4 +213,20 @@ public class Virologus implements Leptetheto{
         v.setHalott(true);
         //TODO: GameManager feladatai ezzel kapcsolatban: Elmenti az áldozat virológus pontszámát (játék végére), majd törli a játékosok listájából
     }
+
+    @Override
+    public String toString() {
+        return "Virologus{" +
+                "mezo=" + mezo +
+                ", tarolo=" + tarolo +
+                ", maxAnyag=" + maxAnyag +
+                ", ismert_hatasok=" + ismert_hatasok +
+                ", rakenve=" + rakenve +
+                ", agens=" + agens +
+                ", felszereles=" + felszereles +
+                ", userName='" + userName + '\'' +
+                ", halott=" + halott +
+                ", vedett=" + vedett +
+                '}';
+    }
 }

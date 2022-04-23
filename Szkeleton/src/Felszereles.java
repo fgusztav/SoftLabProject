@@ -2,9 +2,8 @@ public abstract class Felszereles {
     private int lejarat;
     private Virologus vir;
 
-
-
     public Felszereles() {
+        vir = null;
     }
 
     //getter-setter:

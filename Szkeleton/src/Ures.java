@@ -17,4 +17,5 @@ public class Ures extends Mezo{
     public void eltavolit(Virologus vir) {
         System.out.println("Ures.eltavolit() ->Virologus elhagyja az ures mezot");
     }
+
 }
