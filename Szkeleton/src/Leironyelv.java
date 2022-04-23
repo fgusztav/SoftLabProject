@@ -205,8 +205,11 @@ public class Leironyelv {
             }
         }
 
-        // TODO:if(benult)
-        vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1])));
+        //TODO:if(benult)
+       if( vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1])))){
+           vir.setMezo(Main.gm.getMezok().get(Integer.parseInt(array[1])));
+
+       }
 
     }
 
@@ -217,7 +220,6 @@ public class Leironyelv {
     public void give(String parameter) {
         String array[] = parameter.split(" ");
         Virologus vir = null;
-        //TODO: bocsesz elefeljetttem hogy kell meg keresni a virologust akinvel egyezik a neve, de remélem igy:
         for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
             Virologus v = Main.gm.getVirologusok().get(i);
             String name = v.getUserName();
