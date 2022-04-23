@@ -1,5 +1,7 @@
 import jdk.swing.interop.SwingInterOpUtils;
 
+import java.util.Scanner;
+
 public class Leironyelv {
     //minden parancsra egy fv.
 
@@ -354,6 +356,20 @@ public class Leironyelv {
     }
 
     public void test_mode(String parameter) {
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNextLine()) {
+            System.out.println("Adja a bementi fájl nevét: ");
+            String fajlbe = sc.nextLine();
+            System.out.println("Adja az elvárt kimenetet taralmazó fájl nevét: ");
+            String fajlki = sc.nextLine();
+
+
+
+        }
+    }
+
+    private void minimain() {
+
 
     }
 

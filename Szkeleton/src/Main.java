@@ -4,51 +4,51 @@ public class Main {
     public static GameManager gm = new GameManager(4);
 
     public static void main(String[] args) {
-        String leironyelv = new String(); //csak példaként az első parancs
+        String parancs = new String(); //csak példaként az első parancs
         String parameter = new String(); // masodik parancs
-        Leironyelv banan = new Leironyelv();
+        Leironyelv interfesz = new Leironyelv();
 
-        banan.list("virologus");
+        interfesz.list("virologus");
 
-        switch (leironyelv) {
+        switch (parancs) {
             case "create":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "help":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "info":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "put":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "list":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "load":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "save":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "move":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "print_to_file":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "give":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "step":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "generate_map":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "smear_virus":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "kill":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "make_agent":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "random":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "clear":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "defensivecoat":
-                banan.create(parameter);
+                interfesz.create(parameter);
             case "test_mode":
-                banan.create(parameter);
+                interfesz.create(parameter);
         }
     }
 }
