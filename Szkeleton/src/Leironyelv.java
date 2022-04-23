@@ -304,7 +304,20 @@ public class Leironyelv {
     }
 
     public void step(String parameter) {
+       if(parameter == " "){
+          //TODO: ohm ki a soron következõ?????????? ezt honnann tudom????
+       }
+       else{
+           Virologus v1= null;
+           for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
+               Virologus v = Main.gm.getVirologusok().get(i);
+               String name = v.getUserName();
+               if (parameter.equals(name)) {
+                   v1 = v;
+               }}
+           v1.lep();
 
+       }
     }
 
     public void generate_map(String parameter) {
