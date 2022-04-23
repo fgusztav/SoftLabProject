@@ -79,10 +79,14 @@ public class Virologus implements Leptetheto{
      * @param a Az ágens, amivel kenték a virológust.
      */
     public void megkenve(Agens a) {
-
         rakenve.add(a);
 
-        a.hatas(this);
+        for(int i = 0; i < felszereles.size();i++) {
+            if (!getFelszereles().get(i).isAktiv()) {
+                getFelszereles().get(i).felszerelesHatas(a.getVirologus(),this,a);
+            }
+        }
+
         //System.out.println("Virologus.megkenve() ->A kent hatasa hozzaadva.");
     }
 
@@ -136,12 +140,7 @@ public class Virologus implements Leptetheto{
                 rakenve.remove(rakenve.get(i));
             }
         }
-        /*for(int i = 0; i < felszereles.size();i++){
-            if(getFelszereles().get(i).isAktiv()){
-                getFelszereles().get(i).felszerelesHatas();
-            }
-        }
-        */
+
         for (int i = 0; i < rakenve.size(); i++) {
             rakenve.get(i).hatas(this);
         }
