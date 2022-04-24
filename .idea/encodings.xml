@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/Szkeleton/src/Agens.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/Szkeleton/src/Leironyelv.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Agens.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Amnezia.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Amnezia_kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Anyag.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Balta.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Benitottsag.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Benitottsag_kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Felszereles.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/GameManager.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Kesztyu.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Labor.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Leironyelv.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Leptetheto.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Main.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Medvetanc.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Mezo.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Ovohely.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Raktar.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Ures.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Varos.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedettseg.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedettseg_kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedokopeny.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Virologus.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Vitustanc.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Vitustanc_kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Zsak.java" charset="UTF-16" />
   </component>
 </project>
