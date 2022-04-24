@@ -137,17 +137,17 @@ public class Leironyelv {
     }
 
     public void info(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
         if (array[0].equals("virologus")) {
             Virologus v;
             for (Virologus vir : Main.gm.getVirologusok()) {
                 if (array[1].equals(vir.getUserName())) {
-                    vir.toString();
+                    System.out.println(vir.toString());
                 }
             }
         } else if (array[0].equals("mezo")) {
             for (int i = 0; i < Main.gm.getMezok().size(); i++) {
-                if (Integer.parseInt(array[1]) == (i+1)) Main.gm.getMezok().get(i).toString();
+                if (Integer.parseInt(array[1]) == (i+1)) System.out.println(Main.gm.getMezok().get(i).toString());
             }
         } else {
             invalid_param();
@@ -235,7 +235,7 @@ public class Leironyelv {
     }
 
     public void move(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
         Virologus vir = null;
         boolean benult = false;
         for (Virologus v : Main.gm.getVirologusok()) {
@@ -280,16 +280,15 @@ public class Leironyelv {
     }
 
     public void give(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
         Virologus vir = null;
-        for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
-            Virologus v = Main.gm.getVirologusok().get(i);
+        for (Virologus v : Main.gm.getVirologusok()) {
             String name = v.getUserName();
             if (array[0].equals(name)) {
                 vir = v;
             }
         }
-        boolean kod = false; //mivel az agens és kod nveei ugyan azok a segéd fuggvényél ezzel nézi meg hogy melyik kell adni neki
+        boolean kod = false; //mivel az agens és kod nevei ugyanazok a segéd fuggvénynél ezzel nézi meg hogy melyiket kell adni neki
 
         switch (array[1]) {
 
@@ -307,7 +306,6 @@ public class Leironyelv {
                 break;
             case "kod":
                 kod = true;
-
                  give_seged_agens(array[2], kod, vir);
                 break;
 
@@ -354,32 +352,32 @@ public class Leironyelv {
                 } else {
                     vir.agens_letrehoz(new Vedettseg_kod(vir));
                 }
-                //TODO: medvetancbol is van agens meg kod???
-          /*  case "Medvetanc":
+            case "Medvetanc":
                 if(kod) {
-                    vir.kod_hozzaad(new Amnezia_kod());
+                    System.out.println("Hiba: Medvetánc kód nem létezik");
                 }
-                else{
+                else {
                     vir.agens_letrehoz(new Amnezia_kod());
-                }*/
+                }
         }
     }
 
     public void step(String parameter) {
-       if(parameter == Main.gm.getSoros()){
-
-       }
-       else{
-           Virologus v1= null;
-           for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
-               Virologus v = Main.gm.getVirologusok().get(i);
-               String name = v.getUserName();
-               if (parameter.equals(name)) {
-                   v1 = v;
-               }}
-           v1.lep();
-
-       }
+        if (parameter.equals("")) {
+            int idx = Main.gm.getSoros()+1;
+            Main.gm.getVirologusok().get(idx).lep();
+        }
+        else {
+            Virologus v1 = null;
+            for (Virologus v : Main.gm.getVirologusok()) {
+                String name = v.getUserName();
+                if (parameter.equals(name)) {
+                    v1 = v;
+                }
+            }
+            if (v1 == null) System.out.println("Hiba: Ismeretlen virológus");
+            v1.lep();
+        }
     }
 
     public void generate_map(String parameter) {
@@ -387,7 +385,7 @@ public class Leironyelv {
     }
 
     public void smear_virus(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
         Virologus v1, v2;
         for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
             Virologus v = Main.gm.getVirologusok().get(i);
@@ -403,7 +401,7 @@ public class Leironyelv {
     }
 
     public void kill(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
 
         Virologus v1 = null, v2 = null;
         for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {

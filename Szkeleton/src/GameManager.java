@@ -19,6 +19,8 @@ public class GameManager implements Leptetheto {
     }
 
     private ArrayList<Mezo> mezok;
+    private int soros;
+
     public ArrayList<Mezo> getMezok() {
         return mezok;
     }
@@ -26,10 +28,9 @@ public class GameManager implements Leptetheto {
         this.mezok = mezok;
     }
 
-    // mindig a soros virológus van soron.
-    private int soros;
-    public String getSoros(){
-        return virologusok.get(soros).getUserName();
+    // mindig ez az indexu virologus van soron:
+    public int getSoros(){
+        return soros;
     }
 
     public GameManager(int kodokszama) {
@@ -176,7 +177,7 @@ public class GameManager implements Leptetheto {
      */
     public void addPlayer(String name) {
         System.out.println("GameManager.addPlayer() -> Uj jatekos hozzaadas.");
-        Virologus vir = new Virologus(mezok.get(0), new Anyag(0,0), 20);
+        Virologus vir = new Virologus(mezok.get(0), new Anyag(0,0));
         jatekosszam=jatekosszam+1;
     }
 
