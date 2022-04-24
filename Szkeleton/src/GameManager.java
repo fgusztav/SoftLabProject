@@ -28,6 +28,9 @@ public class GameManager implements Leptetheto {
 
     // mindig a soros virológus van soron.
     private int soros;
+    public String getSoros(){
+        return virologusok.get(soros).getUserName();
+    }
 
     public GameManager(int kodokszama) {
         this.kodok = kodokszama;

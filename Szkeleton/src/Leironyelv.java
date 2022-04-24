@@ -202,15 +202,13 @@ public class Leironyelv {
                 ObjectInputStream in = new ObjectInputStream(file)
             )
         {
-        Main.gm=(GameManager) in.readObject();
+        Main.gm=(GameManager) in.readObject();          //TODO: most így hirtelen nem tudom mi kéne még ide
         }catch(IOException | ClassNotFoundException e){
         e.printStackTrace();
         }
-        if(!Main.gm.print_to_file) //TODO: bef
-        {
 
-        }
     }
+
 
     public void save(String parameter) {
         if(!Main.gm.print_to_file){
@@ -231,7 +229,7 @@ public class Leironyelv {
                 try(
 
                         FileOutputStream file = new FileOutputStream(parameter);
-                        ObjectOutputStream out = new ObjectOutputStream(file)
+                        ObjectOutputStream out = new ObjectOutputStream(file);
                 )
                 {   PrintStream printStream = new PrintStream(new FileOutputStream(parameter, true),
                         true);
@@ -366,8 +364,8 @@ public class Leironyelv {
     }
 
     public void step(String parameter) {
-       if(parameter == " "){
-          //TODO: ohm ki a soron következõ?????????? ezt honnann tudom????
+       if(parameter == Main.gm.getSoros()){
+
        }
        else{
            Virologus v1= null;
@@ -520,7 +518,7 @@ public class Leironyelv {
             case "nukleodid":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Integer.parseInt(mennyiseg),   Main.gm.getMezok().get(index).getTarolo().getAminosav() ));
                 break;
-            case "nminosav":
+            case "anminosav":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Main.gm.getMezok().get(index).getTarolo().getNukleotid(), Integer.parseInt(mennyiseg) ));
         break;
         }
