@@ -511,10 +511,13 @@ public class Leironyelv {
             switch (array[1]) {
                 case "felszereles":
                     set_felszerel(array[2], Integer.parseInt(array[0]));
+                    break;
                 case "kod":
                     set_kod(array[2], Integer.parseInt(array[0]));
+                    break;
                 case "anyag":
                     set_anyag(array[2], array[3], Integer.parseInt(array[0]));
+                    break;
                 case "medvetanc":
                     //TODO: medvetanc
             }
