@@ -10,14 +10,16 @@ import java.util.List;
 public class Virologus implements Leptetheto{
     private Mezo mezo;
     private Anyag tarolo;
-    private int maxAnyag = 20; //Külön-külön limit a két anyagtípusra
     private List<Kod> ismert_hatasok = new ArrayList<>();
     private List<Agens> rakenve = new ArrayList<>();
     private List<Agens> agens = new ArrayList<>();
     private List<Felszereles> felszereles= new ArrayList<>();
     private String userName;
     private boolean halott = false;
-    private boolean vedett;
+
+    //A virológus max anyag tárolási kapacitása (minden fajta anyagból külön-külön ugyanannyi) zsák kapacitását nem számolva:
+    private int maxAnyag = 20; //Külön-külön limit a két anyagtípusra
+
 
     //Getterek-setterek:
     public String getUserName() { return userName; }
@@ -45,13 +47,11 @@ public class Virologus implements Leptetheto{
      * Virológus osztály konstruktora.
      * @param mezo Aktuális mező ahol a virológus tartózkodik.
      * @param tarolo A virológus által eltárolt anyag (nukleotid és aminosav).
-     * @param maxAnyag A virológus max anyag tárolási kapacitása (minden fajta anyagból külön-külön ugyanannyi) zsák kapacitását nem számolva.
      */
 
-    public Virologus(Mezo mezo, Anyag tarolo, int maxAnyag) {
+    public Virologus(Mezo mezo, Anyag tarolo) {
         this.mezo = mezo;
         this.tarolo = tarolo;
-        this.maxAnyag = maxAnyag;
     }
 
     /**
@@ -210,7 +210,6 @@ public class Virologus implements Leptetheto{
                 ", felszereles=" + felszereles +
                 ", userName='" + userName + '\'' +
                 ", halott=" + halott +
-                ", vedett=" + vedett +
                 '}';
     }
 }

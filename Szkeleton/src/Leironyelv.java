@@ -5,37 +5,31 @@ public class Leironyelv {
     //minden parancsra egy fv.
 
     public void create(String parameter) {
-        boolean mezo = false;
-        if (!mezo) {
-            switch (parameter) {
-                case "varos":
-                    Varos v = new Varos();
-                    mezo = true;
-                    break;
-                case "ures":
-                    Ures u = new Ures();
-                    mezo = true;
-                    break;
-
-                case "labor":
-                    Labor l = new Labor();
-                    mezo = true;
-                    break;
-
-                case "raktar":
-                    Raktar r = new Raktar();
-                    mezo = true;
-                    break;
-
-                case "ovohely":
-                    Ovohely ov = new Ovohely();
-                    mezo = true;
-                    break;
-
-            }
-        } else {
-            Virologus v = new Virologus(Main.gm.getMezok().get(0), new Anyag(0, 0), 40);
-            v.setUserName(parameter);
+        switch (parameter) {
+            case "varos":
+                Varos v = new Varos();
+                Main.gm.getMezok().add(v);
+                break;
+            case "ures":
+                Ures u = new Ures();
+                Main.gm.getMezok().add(u);
+                break;
+            case "labor":
+                Labor l = new Labor();
+                Main.gm.getMezok().add(l);
+                break;
+            case "raktar":
+                Raktar r = new Raktar();
+                Main.gm.getMezok().add(r);
+                break;
+            case "ovohely":
+                Ovohely ov = new Ovohely();
+                Main.gm.getMezok().add(ov);
+                break;
+            default:
+                Virologus vi = new Virologus(null, new Anyag(0,0));
+                Main.gm.getVirologusok().add(vi);
+                break;
         }
     }
 
@@ -262,9 +256,12 @@ public class Leironyelv {
         else if (benult) {
             System.out.println("Az adott virológus bénult, ezért nem képes mozogni");
         }
-        if( vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1]))))
+        else if(vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1]))))
         {
            vir.setMezo(Main.gm.getMezok().get(Integer.parseInt(array[1])));
+        }
+        else {
+            System.out.println("Az adott mez? a virológus mez?jével nem szomszédos");
         }
     }
 
