@@ -1,5 +1,6 @@
 import jdk.swing.interop.SwingInterOpUtils;
 
+import java.io.*;
 import java.util.Scanner;
 
 public class Leironyelv {
@@ -187,11 +188,53 @@ public class Leironyelv {
     }
 
     public void load(String parameter) {
+        try(
+                FileInputStream file = new FileInputStream(parameter);
+                ObjectInputStream in = new ObjectInputStream(file)
+            )
+        {
+        Main.gm=(GameManager) in.readObject();
+        }catch(IOException | ClassNotFoundException e){
+        e.printStackTrace();
+        }
+        if(!Main.gm.print_to_file) //TODO: bef
+        {
 
+        }
     }
 
     public void save(String parameter) {
+        if(!Main.gm.print_to_file){
+                try(
+                        FileOutputStream file = new FileOutputStream(parameter);
+                        ObjectOutputStream out = new ObjectOutputStream(file);
+                        )
+                {
+                    out.writeObject(Main.gm);
 
+                }catch(IOException e)
+                    {
+                    e.printStackTrace();
+                    }
+
+
+        }else{
+                try(
+
+                        FileOutputStream file = new FileOutputStream(parameter);
+                        ObjectOutputStream out = new ObjectOutputStream(file);
+                )
+                {   PrintStream printStream = new PrintStream(new FileOutputStream(parameter, true),
+                        true);
+                    System.setOut(printStream);
+
+                    out.writeObject(Main.gm);
+
+                }catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
+        }
     }
 
     public void move(String parameter) {
@@ -214,7 +257,17 @@ public class Leironyelv {
     }
 
     public void print_to_file(String parameter) {
-
+        switch (parameter) {
+            case "on":
+                GameManager.print_to_file = true;
+                break;
+            case "off":
+                GameManager.print_to_file = false;
+                break;
+            default:
+                invalid_param();
+                break;
+        }
     }
 
     public void give(String parameter) {
@@ -321,7 +374,7 @@ public class Leironyelv {
     }
 
     public void generate_map(String parameter) {
-
+        Main.gm.palya_generalas(Integer.parseInt(parameter));
     }
 
     public void smear_virus(String parameter) {

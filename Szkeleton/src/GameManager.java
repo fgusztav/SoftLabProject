@@ -4,9 +4,11 @@ public class GameManager implements Leptetheto {
     /**
      * Csak tesztelés céljából (determinisztukus teszteléshez):
      */
+    public static boolean print_to_file = false;
     public static boolean rand = true;
     public static boolean kopeny_elfogad = false;
     private int kodok;
+    private int jatekosszam;
 
     private ArrayList<Virologus> virologusok;
 
@@ -62,8 +64,17 @@ public class GameManager implements Leptetheto {
     /**
      * A játék elején legenerálja a pályát.
      */
-    public void palya_generalas() {
-        System.out.println("GameManager.palya_generalas() -> Palya generalva.");
+    public void palya_generalas(int jatekosok)
+    { //TODO: folyt köv reggel
+        if(!GameManager.rand)
+        {
+            this.jatekosszam=jatekosok;
+
+
+        }else {
+
+            //System.out.println("GameManager.palya_generalas() -> Palya generalva.");
+        }
     }
 
     /**
@@ -90,13 +101,14 @@ public class GameManager implements Leptetheto {
     public void addPlayer(String name) {
         System.out.println("GameManager.addPlayer() -> Uj jatekos hozzaadas.");
         Virologus vir = new Virologus(mezok.get(0), new Anyag(0,0), 20);
+        jatekosszam=jatekosszam+1;
     }
 
     /**
      * Elinditja a játékot a játékosokat elhelyezi a játéktéren.
      */
     public void startGame() {
-        palya_generalas();
+        palya_generalas(jatekosszam);
         System.out.println("GameManager.startGame() -> Jatek inditasa.");
     }
 }
