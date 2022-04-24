@@ -37,6 +37,13 @@ public class Virologus implements Leptetheto{
     public List<Felszereles> getFelszereles() {return felszereles; }
     public List<Agens> getRakenve(){return rakenve;}
 
+    public List<Agens> getAgens() {
+        return agens;
+    }
+    public void setAgens(List<Agens> agens) {
+        this.agens = agens;
+    }
+
     public List<Kod> getIsmert_hatasok() { return ismert_hatasok; }
     public void setIsmert_hatasok(List<Kod> ismert_hatasok) { this.ismert_hatasok = ismert_hatasok; }
 

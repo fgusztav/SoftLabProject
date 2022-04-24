@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Leironyelv {
@@ -386,18 +387,28 @@ public class Leironyelv {
 
     public void smear_virus(String parameter) {
         String[] array = parameter.split(" ");
-        Virologus v1, v2;
-        for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
-            Virologus v = Main.gm.getVirologusok().get(i);
+        Virologus v1 = null;
+        Virologus v2 = null;
+        for (Virologus v : Main.gm.getVirologusok()) {
             String name = v.getUserName();
-            if (array[0].equals(name)) {
-                v1 = v;
-            }
-            if (array[1].equals(name)) {
-                v2 = v;
-            }
+            if (array[0].equals(name)) v1 = v;
+            if (array[1].equals(name)) v2 = v;
         }
-        //TODO: GetType
+
+        if (v1 == null || v2 == null) {
+            System.out.println("Hiba: Ismeretlen virológus");
+            return;
+        }
+        //v1 keni v2-t, agens ellenorzese:
+        Agens a = null;
+        for (Agens temp_agens : v1.getAgens()) {
+            if (a.toString().toLowerCase().equals(array[2])) a = temp_agens;
+        }
+
+        if (a == null) System.out.println("Hiba: A megadott virológus nem rendelkezik a szükséges ágenssel");
+        else {
+            v1.kenes(v2, a);
+        }
     }
 
     public void kill(String parameter) {
