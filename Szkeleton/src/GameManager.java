@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameManager implements Leptetheto {
     /**
@@ -63,19 +64,91 @@ public class GameManager implements Leptetheto {
 
     /**
      * A játék elején legenerálja a pályát.
+     * Úgy függ a játékosok számától a pálya,hogy mindig 4x több mezőelem jön létre,
+     * mint ahány játékos játszik.
+     * Úgy döntődik el, hogy milyen típusú mező jön létre, hogy a mezők listában
+     * létrejövő új mező indexének oszthatóságát vizsgáljuk, Így Üres mezőből
+     * keletkezik a legtöbb, aztán raktár, labor és város, legkevesebb pedig óvóhelyből.
      */
     public void palya_generalas(int jatekosok)
-    { //TODO: folyt köv reggel
-        if(!GameManager.rand)
-        {
-            this.jatekosszam=jatekosok;
+    {
+        if(!GameManager.rand) { //Random ki van kapcsolva
+            mezok = new ArrayList<>();
 
+            for (int j = 0; j < (4 * jatekosok); ++j) {
 
-        }else {
+                if (j % 2 == 0) {
+                    Mezo m = new Raktar();
+                    mezok.add(m);
+                    for (int k = 0; k < mezok.size(); ++k)
+                        m.setSzomszedok(mezok.get(k));
 
-            //System.out.println("GameManager.palya_generalas() -> Palya generalva.");
+                } else if (j % 3 == 0) {
+                    Mezo m1 = new Labor();
+                    mezok.add(m1);
+                    for (int k = 0; k < mezok.size(); ++k)
+                        m1.setSzomszedok(mezok.get(k));
+
+                    Mezo m2 = new Varos();
+                    mezok.add(m2);
+                    for (int k = 0; k < mezok.size(); ++k)
+                        m2.setSzomszedok(mezok.get(k));
+
+                } else if (j % 4 == 0) {
+                    Mezo m = new Ovohely();
+                    mezok.add(m);
+                    for (int k = 0; k < mezok.size(); ++k)
+                        m.setSzomszedok(mezok.get(k));
+
+                } else {
+                    Mezo m = new Ures();
+                    mezok.add(m);
+                    for (int k = 0; k < mezok.size(); ++k)
+                        m.setSzomszedok(mezok.get(k));
+                    }
+            }
+        }else { //Random be van kapcsolva
+            mezok = new ArrayList<>();
+            Random rando=new Random();
+
+            for (int j = 0; j < (4 * jatekosok); ++j) {
+
+                if (j % (rando.nextInt(5)) == 0) {
+                    Mezo m = new Raktar();
+                    mezok.add(m);
+                    for (int k = 0; k < (rando.nextInt(mezok.size())); ++k)
+                        m.setSzomszedok(mezok.get(k));
+
+                } else if (j % (rando.nextInt(10)) == 0) {
+                    Mezo m1 = new Labor();
+                    mezok.add(m1);
+                    for (int k = 0; k < (rando.nextInt(mezok.size())); ++k)
+                        m1.setSzomszedok(mezok.get(k));
+
+                    Mezo m2 = new Varos();
+                    mezok.add(m2);
+                    for (int k = 0; k < (rando.nextInt(mezok.size())); ++k)
+                        m2.setSzomszedok(mezok.get(k));
+
+                } else if (j % (rando.nextInt(10)) == 0) {
+                    Mezo m = new Ovohely();
+                    mezok.add(m);
+                    for (int k = 0; k < (rando.nextInt(mezok.size())); ++k)
+                        m.setSzomszedok(mezok.get(k));
+
+                } else {
+                    Mezo m = new Ures();
+                    mezok.add(m);
+                    for (int k = 0; k < (rando.nextInt(mezok.size())); ++k)
+                        m.setSzomszedok(mezok.get(k));
+                }
+            }
         }
     }
+
+            //System.out.println("GameManager.palya_generalas() -> Palya generalva.");
+
+
 
     /**
      * A játékosoktól lekérdezi a pontjaikat.
