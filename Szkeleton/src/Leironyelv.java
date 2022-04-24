@@ -188,8 +188,8 @@ public class Leironyelv {
                     System.out.println(vir.getUserName());
                 }
             case "mezok":
+                int i = 1;
                 for (Mezo m : Main.gm.getMezok()) {
-                    int i = 1;
                     System.out.println(i + " " + m.toString());
                     i++;
                 }
@@ -197,34 +197,30 @@ public class Leironyelv {
     }
 
     public void load(String parameter) {
-        try(
+        try (
                 FileInputStream file = new FileInputStream(parameter);
                 ObjectInputStream in = new ObjectInputStream(file)
             )
         {
         Main.gm=(GameManager) in.readObject();          //TODO: most így hirtelen nem tudom mi kéne még ide
         }catch(IOException | ClassNotFoundException e){
-        e.printStackTrace();
-        }
 
+            e.printStackTrace();
+        }
     }
 
 
     public void save(String parameter) {
         if(!Main.gm.print_to_file){
-                try(
+                try
+                        (
                         FileOutputStream file = new FileOutputStream(parameter);
                         ObjectOutputStream out = new ObjectOutputStream(file);
                         )
                 {
                     out.writeObject(Main.gm);
-
-                }catch(IOException e)
-                    {
-                    e.printStackTrace();
-                    }
-
-
+                }
+                catch(IOException e) {e.printStackTrace();}
         }else{
                 try(
 
@@ -247,20 +243,29 @@ public class Leironyelv {
     public void move(String parameter) {
         String array[] = parameter.split(" ");
         Virologus vir = null;
-        for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
-            Virologus v = Main.gm.getVirologusok().get(i);
+        boolean benult = false;
+        for (Virologus v : Main.gm.getVirologusok()) {
             String name = v.getUserName();
             if (array[0].equals(name)) {
                 vir = v;
+
+                //ellenorizzük, hogy a virológus bénult-e:
+                for (Agens a : vir.getRakenve()) {
+                    if (a.toString().equals("Benitottsag") && a.getKenve()) benult = true;
+                }
             }
         }
 
-        //TODO:if(benult)
-       if( vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1])))){
+        if (vir == null) {
+            System.out.println("A megadott virológus nem létezik");
+        }
+        else if (benult) {
+            System.out.println("Az adott virológus bénult, ezért nem képes mozogni");
+        }
+        if( vir.getMezo().getSzomszedok().contains(Main.gm.getMezok().get(Integer.parseInt(array[1]))))
+        {
            vir.setMezo(Main.gm.getMezok().get(Integer.parseInt(array[1])));
-
-       }
-
+        }
     }
 
     public void print_to_file(String parameter) {
@@ -482,7 +487,7 @@ public class Leironyelv {
                 }
                 myReader.close();
             } catch (FileNotFoundException e) {
-                System.out.println("An error occurred.");
+                System.out.println("File not found.");
                 e.printStackTrace();
             }
 
@@ -518,7 +523,7 @@ public class Leironyelv {
             case "nukleodid":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Integer.parseInt(mennyiseg),   Main.gm.getMezok().get(index).getTarolo().getAminosav() ));
                 break;
-            case "anminosav":
+            case "aminosav":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Main.gm.getMezok().get(index).getTarolo().getNukleotid(), Integer.parseInt(mennyiseg) ));
         break;
         }
