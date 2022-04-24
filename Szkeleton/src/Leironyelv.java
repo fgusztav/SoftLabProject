@@ -473,7 +473,17 @@ public class Leironyelv {
     }
 
     public void defensivecoat(String parameter) {
-
+        switch (parameter) {
+            case "on":
+                GameManager.kopeny_elfogad = true;
+                break;
+            case "off":
+                GameManager.kopeny_elfogad = false;
+                break;
+            default:
+                invalid_param();
+                break;
+        }
     }
 
     public void test_mode(String parameter) {
