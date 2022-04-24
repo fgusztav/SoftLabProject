@@ -1,5 +1,3 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -13,18 +11,27 @@ public class Leironyelv {
                 case "varos":
                     Varos v = new Varos();
                     mezo = true;
+                    break;
                 case "ures":
                     Ures u = new Ures();
                     mezo = true;
+                    break;
+
                 case "labor":
                     Labor l = new Labor();
                     mezo = true;
+                    break;
+
                 case "raktar":
                     Raktar r = new Raktar();
                     mezo = true;
+                    break;
+
                 case "ovohely":
                     Ovohely ov = new Ovohely();
                     mezo = true;
+                    break;
+
             }
         } else {
             Virologus v = new Virologus(Main.gm.getMezok().get(0), new Anyag(0, 0), 40);
@@ -34,9 +41,6 @@ public class Leironyelv {
 
     public void help(String parameter) {
         switch (parameter) {
-            case "":
-                System.out.println("create\nhelp\ninfo\nput\nconnect\nlist\nload\nsave\nmove\nprint_to_file\ngive\nstep\ngenerate_map\nsmear_virus\nkill\nmake_agent\nrandom\nclear\ndefensivecoat\ntest:mode");
-                break;
             case "create":
                 System.out.println("Létrehozható ezzel a paranccsal új virológus, vagy egy adott típusú mezõ - város, labor, üres, óvóhely, raktár.");
                 System.out.println("\nParaméterei: Create <virológus_neve> vagy Create <varos/ures/labor/raktar/ovohely>");
@@ -132,44 +136,49 @@ public class Leironyelv {
                         "anyag\n" +
                         "medvetanc\n");
                 break;
+            default:
+                System.out.println("Parancsok:\ncreate\nhelp\ninfo\nput\nconnect\nlist\nload\nsave\nmove\nprint_to_file\ngive\nstep\ngenerate_map\nsmear_virus\nkill\nmake_agent\nrandom\nclear\ndefensivecoat\ntest:mode\nTöbb információ: help <parancs_neve>\n");
+                break;
         }
     }
 
     public void info(String parameter) {
         String array[] = parameter.split(" ");
-        if (array[0].equals("Virologus")) {
+        if (array[0].equals("virologus")) {
             Virologus v;
             for (Virologus vir : Main.gm.getVirologusok()) {
                 if (array[1].equals(vir.getUserName())) {
                     vir.toString();
                 }
             }
-        } else if (array[0].equals("Mezo")) {
-            //TODO:Kiiratas
+        } else if (array[0].equals("mezo")) {
+            for (int i = 0; i < Main.gm.getMezok().size(); i++) {
+                if (Integer.parseInt(array[1]) == (i+1)) Main.gm.getMezok().get(i).toString();
+            }
         } else {
-            System.out.println("Invalid parameter");
+            invalid_param();
         }
     }
 
     public void put(String parameter) {
-        String array[] = parameter.split(" ");
-        String v = array[0];
+        String[] array = parameter.split(" ");
 
         int azon = Integer.parseInt(array[1]);
         Mezo m = Main.gm.getMezok().get(azon);
 
         for (Virologus vir : Main.gm.getVirologusok()) {
-            if (v.equals(vir.getUserName())) {
+            if (array[0].equals(vir.getUserName())) {
                 vir.setMezo(m);
             }
         }
     }
 
     public void connect(String parameter) {
-        String array[] = parameter.split(" ");
-        Main.gm.getMezok().get(Integer.parseInt(array[0])).setSzomszedok( Main.gm.getMezok().get(Integer.parseInt(array[1])));
-        Main.gm.getMezok().get(Integer.parseInt(array[1])).setSzomszedok( Main.gm.getMezok().get(Integer.parseInt(array[2])));
-
+        String[] array = parameter.split(" ");
+        Mezo m1 = Main.gm.getMezok().get(Integer.parseInt(array[0]));
+        Mezo m2 = Main.gm.getMezok().get(Integer.parseInt(array[1]));
+        m1.getSzomszedok().add(m2);
+        m2.getSzomszedok().add(m1);
     }
 
     public void list(String parameter) {
@@ -178,7 +187,7 @@ public class Leironyelv {
                 for (Virologus vir : Main.gm.getVirologusok()) {
                     System.out.println(vir.getUserName());
                 }
-            case "mezok:":
+            case "mezok":
                 for (Mezo m : Main.gm.getMezok()) {
                     int i = 1;
                     System.out.println(i + " " + m.toString());
@@ -222,7 +231,7 @@ public class Leironyelv {
                 try(
 
                         FileOutputStream file = new FileOutputStream(parameter);
-                        ObjectOutputStream out = new ObjectOutputStream(file);
+                        ObjectOutputStream out = new ObjectOutputStream(file)
                 )
                 {   PrintStream printStream = new PrintStream(new FileOutputStream(parameter, true),
                         true);
@@ -416,7 +425,7 @@ public class Leironyelv {
     }
 
     public void make_agent(String parameter) {
-        String array[] = parameter.split(" ");
+        String[] array = parameter.split(" ");
         for (int i = 0; i < Main.gm.getVirologusok().size(); i++) {
             Virologus v = Main.gm.getVirologusok().get(i);
             String name = v.getUserName();
@@ -466,7 +475,18 @@ public class Leironyelv {
             System.out.println("Adja az elvárt kimenetet taralmazó fájl nevét: ");
             String fajlki = sc.nextLine();
 
-
+            try {
+                File myObj = new File(fajlbe);
+                Scanner myReader = new Scanner(myObj);
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    System.out.println(data);
+                }
+                myReader.close();
+            } catch (FileNotFoundException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
 
         }
     }
@@ -477,32 +497,37 @@ public class Leironyelv {
     }
 
     public void set(String parameter) {
-        String array[] = parameter.split(" ");
-        switch (array[1]) {
-            case "felszereles":
-                set_felszerel(array[2], Integer.parseInt(array[0]));
-            case "kod":
-                set_kod(array[2],  Integer.parseInt(array[0]));
-            case "anyag":
-                set_anyag(array[2], array[3], Integer.parseInt(array[0]));
-            case "medvetanc":
-                //TODO: medvetanc
+        String[] array = parameter.split(" ");
+        try {
+            switch (array[1]) {
+                case "felszereles":
+                    set_felszerel(array[2], Integer.parseInt(array[0]));
+                case "kod":
+                    set_kod(array[2], Integer.parseInt(array[0]));
+                case "anyag":
+                    set_anyag(array[2], array[3], Integer.parseInt(array[0]));
+                case "medvetanc":
+                    //TODO: medvetanc
+            }
+        } catch (Exception e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
 
     }
-    public void set_anyag(String param, String mennyiseg, int index){
+    private void set_anyag(String param, String mennyiseg, int index){
         switch (param){
-            case "Nukleodid":
+            case "nukleodid":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Integer.parseInt(mennyiseg),   Main.gm.getMezok().get(index).getTarolo().getAminosav() ));
                 break;
-            case "Aminosac":
+            case "nminosav":
                 Main.gm.getMezok().get(index).setTarolo(new Anyag(Main.gm.getMezok().get(index).getTarolo().getNukleotid(), Integer.parseInt(mennyiseg) ));
         break;
         }
 
     }
 
-    public void set_kod(String param, int index){
+    private void set_kod(String param, int index){
         //TODO: typeCheck kéne hogy Labor mezo-e mert csak ott lehet kod
         switch (param){
             case "Amnezia":
@@ -517,7 +542,7 @@ public class Leironyelv {
         }
     }
 
-    public void set_felszerel(String param, int index) {
+    private void set_felszerel(String param, int index) {
         switch (param) {
             case "Kesztyu":
 
