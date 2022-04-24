@@ -13,7 +13,10 @@ public class Vitustanc extends Agens{
      * Körönként csökkenti a hatás időtartamát.
      */
     public void lep() {
-        System.out.println("Vitustanc.lep() ->Vitustanc hatas leptetese.");
+        setIdotartam(getIdotartam()-1);
+        if(getIdotartam() <= 0){
+            getVirologus().getRakenve().remove(this);
+        }
     }
 
     /**
@@ -33,7 +36,7 @@ public class Vitustanc extends Agens{
             v.mozgas(lep);
         }
 
-        System.out.println("Vitustanc.hatas() ->Vitustanc hatasa.");
+        //System.out.println("Vitustanc.hatas() ->Vitustanc hatasa.");
     }
 
     @Override

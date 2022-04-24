@@ -1,6 +1,6 @@
 public class Kesztyu extends Felszereles {
     public Kesztyu() {
-        setAktiv(false);
+        setAktiv(false); //TODO lehet, hogy ez aktiv kéne, hogy legyen és kiválasztható, hogy mit dobunk vissza.
         setLejarat(3);
     }
 

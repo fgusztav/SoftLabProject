@@ -31,4 +31,5 @@ public abstract class Felszereles {
     public void setAktiv(boolean aktiv) {
         this.aktiv = aktiv;
     }
+    public  void onRemove(){}
 }

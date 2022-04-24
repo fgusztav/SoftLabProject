@@ -11,6 +11,13 @@ public class Vedettseg extends Agens {
      */
     public void lep() {
         setIdotartam(getIdotartam()-1);
+        if(getIdotartam() <= 0){
+            for(int i = 0; i < getVirologus().getRakenve().size(); i++){
+                getVirologus().getRakenve().get(i).setKenve(true);
+            }
+            getVirologus().getRakenve().remove(this);
+        }
+
         //System.out.println("Vedettseg.lep() ->Védettség hatás léptetése.");
     }
 
@@ -20,11 +27,8 @@ public class Vedettseg extends Agens {
      */
     public void hatas(Virologus v) {
         for(int i = 0; i < v.getRakenve().size(); i++){
-            if(!v.getRakenve().get(i).getKenve()){
-                v.getRakenve().remove(v.getRakenve().get(i));
-            }
+                v.getRakenve().get(i).setKenve(false);
         }
-
     }
 
     @Override

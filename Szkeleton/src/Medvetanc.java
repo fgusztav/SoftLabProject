@@ -3,7 +3,8 @@ import java.util.Random;
 
 public class Medvetanc extends Agens{
     public Medvetanc() {
-        super();
+        setKenve(true);
+        setIdotartam(1);
     }
 
     @Override
@@ -13,10 +14,12 @@ public class Medvetanc extends Agens{
 
     @Override
     public void hatas(Virologus v) {
+        for(int i = 0; i < v.getRakenve().size(); i++){
+            v.getRakenve().remove(v.getRakenve().get(i));
+        }
         List<Mezo> mezok = v.getMezo().getSzomszedok();
         int rnd;
         if(mezok.size() > 0){
-
             rnd = new Random().nextInt(mezok.size());
             if(GameManager.rand == false){
                 rnd = 0;

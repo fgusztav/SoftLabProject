@@ -62,13 +62,7 @@ public class Virologus implements Leptetheto{
     public void kenes(Virologus cel, Agens a) {
         //System.out.println("Virologus.kenes() -> Kenes.");
         agens.remove(a);
-        if (cel != this) {
-            for (int i = 0; i < cel.getFelszereles().size(); i++)
-            {
-                cel.getFelszereles().get(i).felszerelesHatas(this, cel, a);
-            }
-        }
-        //TODO: Balinttal folytatni kenes, megkenve, felszerelesHatas() stb. vel kapcsolatos fv.eket
+
         if (a != null) {
             cel.megkenve(a);
         }
@@ -136,16 +130,9 @@ public class Virologus implements Leptetheto{
         //System.out.println("Virologus.lep() -> Virologus leptetese.");
         for (int i = 0; i < rakenve.size(); i++){
             rakenve.get(i).lep();
-            if (rakenve.get(i).getIdotartam() == 0){
-                rakenve.remove(rakenve.get(i));
-            }
         }
-
         for (int i = 0; i < rakenve.size(); i++) {
             rakenve.get(i).hatas(this);
-        }
-        for (int i = 0; i < rakenve.size(); i++){
-            rakenve.get(i).setKenve(true);
         }
     }
 
@@ -154,8 +141,7 @@ public class Virologus implements Leptetheto{
      * Minden lépéskor meghívódik
      */
     public void anyag_felvesz() {
-        //TODO: Zsak tarhelyenek elerese hogyan? Zsakhatas megnoveli a virolguset (maxAnyagat) tehat nem is kell a zsakba tarolo?
-        System.out.println("Virologus.anyag_felvesz() -> Anyag felveve");
+        //System.out.println("Virologus.anyag_felvesz() -> Anyag felveve");
         //((Raktar)mezo).getTarolo();
         //nem kellett mert nem hasznaltuk meg Szkeletonban
         if (getTarolo().getAminosav() <= maxAnyag || getTarolo().getNukleotid() <= maxAnyag) {//TODO: ezt a szamolast ellenorizni papiron Xd

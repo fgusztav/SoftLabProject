@@ -23,7 +23,7 @@ public abstract class Agens implements Leptetheto {
     }
 
     public Agens(Virologus v){
-        kenve = false;
+        kenve = true;
         virologus = v;
     }
 
