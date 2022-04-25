@@ -1,0 +1,9 @@
+Create Ures
+Create Raktar
+Set 2 anyag Nukleotid 5
+Set 2 anyag Aminosav 5
+Connect 1 2
+Create V1
+Put V1 1
+Move V1 2
+Info Virologus V1

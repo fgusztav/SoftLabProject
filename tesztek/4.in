@@ -1,0 +1,12 @@
+Create Ures
+Create Varos
+Set 2 felszereles Balta
+Set 2 felszereles Kesztyu
+Connect 1 2
+Create V1
+Put V1 1
+Move V1 2
+Give V1 felszereles Balta 
+Give V1 felszereles Kesztyu
+Clear 2
+Info Virologus V1

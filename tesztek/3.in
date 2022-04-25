@@ -1,0 +1,16 @@
+Create Ures
+Create Ures
+Connect 1 2
+Create V1
+Put V1 1
+Create V2
+Put V2 2
+Give V2 Nukleotid 5 
+Give V2 Aminosav 5
+Move V1 2
+Give V1 Agens Benitottsag
+Smear_virus V1 V2 Benitottsag
+Step
+Step
+Info Virologus V1
+Info Virologus V2

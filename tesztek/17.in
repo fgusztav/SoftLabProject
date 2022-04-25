@@ -1,0 +1,9 @@
+Create Ures
+Create V1
+Create V2
+Give V2 agens Vedettseg
+Smear_virus V2 V1 Vedettseg
+Give V2 agens Amnezia
+Give V1 kod Amnezia
+Smear_virus V2 V1 Amnezia
+Info Virologus V1

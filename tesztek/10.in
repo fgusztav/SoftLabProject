@@ -1,0 +1,11 @@
+Create Ures
+Create V1
+Create V2
+Put V1 1
+Put V2 1
+Give V1 kod Vitustanc
+Give V2 agens Amnezia
+Smear_virus V2 V1 Amnezia
+Step
+Step
+Info Virologus V1
