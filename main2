@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         TestClass test = new TestClass();
 
-        System.out.println("\n1. Jatek kezdes");
-        System.out.println("\n2. Jatekos hozzaadsa");
+        IFio.print("\n1. Jatek kezdes");
+        IFio.print("\n2. Jatekos hozzaadsa");
 
         Scanner in = new Scanner(System.in);
         int num = 2;
@@ -16,46 +16,46 @@ public class Main {
                     /**
                      *Játék kezdes
                      */
-                    System.out.println("\nJatek kezdes.");
+                    IFio.print("\nJatek kezdes.");
                     test.JatekKezdes();
                     Jatek(num, in, test);
                     test.JatekVege();
                     //nemtodo: amit irtam commitba
                     break;
                 case 2:
-                    System.out.println("\nUj jatekost adott hozza!");
+                    IFio.print("\nUj jatekost adott hozza!");
             }
         }
 
         /**
          * Benitas alatt lep.
          */
-        System.out.println("\nBenitas alatt lep");
+        IFio.print("\nBenitas alatt lep");
         test.BenitasAlattLep();
 
         /**
          * Amnezia alatt lep.
          */
-        System.out.println("\nAmnezia alatt lep");
+        IFio.print("\nAmnezia alatt lep");
         test.AmneziaAlattLep();
 
         /**
          * Vitustanc alatt lep.
          */
         //nemtodo: EZ valamiért nem uködik????
-        //System.out.println("\nVítustancalatt lep");
+        //IFio.print("\nVítustancalatt lep");
         // test.VitustáncAlattLep();
 
         /**
          * Vedettseg alatt lep.
          */
-        System.out.println("\nVedettseg alatt lep");
+        IFio.print("\nVedettseg alatt lep");
         test.VedettsegAlattLep();
 
         /**
          * Anyag felvétel bénult játékostól
          */
-        System.out.println("\n Anyag felvétel bénult játékostól");
+        IFio.print("\n Anyag felvétel bénult játékostól");
         test.AnyagfelvetelBenultJatekostol();
     }
 
@@ -69,11 +69,11 @@ public class Main {
         boolean vege = true;
         while (vege) {
             //Kb. amiket tud majd csinálni
-            System.out.println("1. Mozog");
-            System.out.println("2. Keni magat");
-            System.out.println("3. Keni mast");
-            System.out.println("4. Vitustanc agenst csinal");
-            System.out.println("5. Vege");
+            IFio.print("1. Mozog");
+            IFio.print("2. Keni magat");
+            IFio.print("3. Keni mast");
+            IFio.print("4. Vitustanc agenst csinal");
+            IFio.print("5. Vege");
             num = in.nextInt();
             switch (num) {
                 case 1:
@@ -155,17 +155,17 @@ public class Main {
     }
 
     public static void Kiiras() {
-        System.out.println("1. Vitustanccal");
-        System.out.println("2. Benitoval");
-        System.out.println("3. Vedettseggel");
-        System.out.println("4. Amneziaval");
+        IFio.print("1. Vitustanccal");
+        IFio.print("2. Benitoval");
+        IFio.print("3. Vedettseggel");
+        IFio.print("4. Amneziaval");
     }
 
     public static void Kiiras2() {
-        System.out.println("1. Ures mezore");
-        System.out.println("2. Raktarra");
-        System.out.println("3. Varosra");
-        System.out.println("4. Laborra");
+        IFio.print("1. Ures mezore");
+        IFio.print("2. Raktarra");
+        IFio.print("3. Varosra");
+        IFio.print("4. Laborra");
     }
 
 }
