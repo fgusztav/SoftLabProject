@@ -2,7 +2,7 @@ Create Ures
 Create V1
 Put V1 1
 Give V1 kod Vedettseg 
-Give V1 Nukleotid 5 
-Give V1 Aminosav 5
+Give V1 Nukleotid 10 
+Give V1 Aminosav 10
 Make_agent V1 Vedettseg
 Info Virologus V1
