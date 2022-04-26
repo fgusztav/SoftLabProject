@@ -1,0 +1,1 @@
+javac -encoding UTF16 -d bin Szkeleton/src/*.java
