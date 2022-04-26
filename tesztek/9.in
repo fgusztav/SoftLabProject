@@ -3,7 +3,7 @@ Create Ures
 Connect 1 2
 Create V1
 Put V1 1
-Give V1 agens Benitas
-Smear_virus V1 V1 Benitas
+Give V1 agens Benitottsag
+Smear_virus V1 V1 Benitottsag
 Move V1 2
 Info Virologus V1
