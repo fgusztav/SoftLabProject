@@ -1,8 +1,8 @@
 Create Ures
 Create V1
-Give V1 nukleodid 10 
+Give V1 nukleotid 10 
 Give V1 
 Give V1 aminosav 10
 Give kod Amnezia
-Make_agent Amnezia
+Make_agent V1 Amnezia
 Info Virologus V1

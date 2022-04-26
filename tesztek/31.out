@@ -1,7 +1,8 @@
 Felhasznalonev: V1
-Mezo: 1, Ures
-Tarolo: nukleodid 10 aminosav 10
-Felszerelések: -
+Mezo: 01, Ures
+Tarolo: aminosav: 10 nukleotid: 10
+Felszerelesek: -
 Kodok: Amnezia
-Agensek:- 
-Rakenve:-
+Agensek: -
+Rakenve: -
+Halott: false
