@@ -1,8 +1,4 @@
-Felhasznalonev: -
-Mezo: 2, Raktar
-Tarolo: Aminosav 0, Nukleotid 0
-Felszerelések: -
-Kodok: -
-Agensek: -
-Rakenve: -
-Halott: false
+Raktar
+v1
+Szomszédok:
+Aminosav: 4 Nukleotid: 10
