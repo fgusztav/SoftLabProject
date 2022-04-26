@@ -1,9 +1,9 @@
-Hiba: az adott mezőre a V1 virológus nem léphet.
-
-Felhasznalonev: V1
+Az adott virológus bénult, ezért nem képes mozogni
+Felhasznalonev: v1 
 Mezo: 1, Ures
-Tarolo: -
+Tarolo: - 
 Felszerelések: -
 Kodok: -
-Agensek:- 
-Rakenve: Benitas
+Agensek: -
+Rakenve: Benitottsag
+Halott: false
