@@ -5,5 +5,5 @@ connect 1 2
 Set 2 medvetanc
 Create V1
 Put V1 1
-Move v1 1
+Move v1 2
 Info virologus v1
