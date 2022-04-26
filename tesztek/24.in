@@ -1,6 +1,9 @@
+random off
 Create Ures
 Create Labor
+connect 1 2
 Set 2 medvetanc
 Create V1
-Put V1 2
+Put V1 1
+Move v1 1
 Info virologus v1
