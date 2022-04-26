@@ -1,15 +1,17 @@
 Felhasznalonev: V1
 Mezo: 2, Ures
-Tarolo: 5 aminosav, 5 nukleotid
+Tarolo: aminosav: 5 nukleotid: 5
 Felszerelések: -
 Kodok: -
 Agensek: -
 Rakenve: -
+Halott: false
 
 Felhasznalonev: V2
 Mezo: 2, Ures
-Tarolo: 0 aminosav, 0 nukleotid
+Tarolo: -
 Felszerelések: -
 Kodok: -
 Agensek: -
 Rakenve: Benitottsag
+Halott: false
