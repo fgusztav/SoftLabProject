@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Balta.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Benitottsag.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Benitottsag_kod.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/Controller.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Felszereles.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/GameManager.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/IFio.java" charset="UTF-16" />
@@ -20,7 +21,6 @@
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Main.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Medvetanc.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Mezo.java" charset="UTF-16" />
-    <file url="file://$PROJECT_DIR$/Szkeleton/src/Observer.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Ovohely.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Raktar.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Ures.java" charset="UTF-16" />
@@ -28,6 +28,7 @@
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedettseg.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedettseg_kod.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Vedokopeny.java" charset="UTF-16" />
+    <file url="file://$PROJECT_DIR$/Szkeleton/src/View.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Virologus.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Vitustanc.java" charset="UTF-16" />
     <file url="file://$PROJECT_DIR$/Szkeleton/src/Vitustanc_kod.java" charset="UTF-16" />
